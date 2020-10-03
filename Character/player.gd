@@ -11,7 +11,9 @@ const MIN_JUMP_HEIGHT = -200
 var motion = Vector2()
 var grabbing = false
 var jumping = false
+var dir = 1
 onready var jt = $jump_timer
+onready var camerapos = $camerapos
 
 
 func _physics_process(delta):
@@ -19,17 +21,26 @@ func _physics_process(delta):
 	var friction = false
 	climb(friction)
 	movement(friction)
+	#direction()
 	motion = move_and_slide(motion, UP, 5, 4, PI/3)
 	
 
+func direction():
+	if dir == -1:
+		camerapos.position.x = 52
+	else:
+		camerapos.position.x = -52
+	print(camerapos)
+		
 func movement(friction):
 	#left and right
 	if Input.is_action_pressed("right"):
 		motion.x = min(motion.x+ACCELERATION, MAX_SPEED)
+		dir = -1
 		
 	elif Input.is_action_pressed("left"):
 		motion.x = max(motion.x-ACCELERATION, -MAX_SPEED)
-		
+		dir = 1
 	else:
 		friction = true
 	
