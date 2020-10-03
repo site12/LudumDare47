@@ -58,6 +58,7 @@ func climb(friction):
 		grabbing = true
 		friction = true
 		motion.y = $Position2D.position.y
+		motion.x = $Position2D.position.x
 	else:
 		grabbing = false
 		GRAVITY = 20
