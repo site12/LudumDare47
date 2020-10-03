@@ -1,42 +1,44 @@
 extends KinematicBody2D
 
-export (int) var speed = 200
-export (int) var jump_speed = -100
-export (int) var jump_speed_max = -400
-export (int) var gravity = 1000
-export (float, 0, 1.0) var friction = 0.25
-export (float, 0, 1.0) var acceleration = 0.5
+const UP = Vector2(0, -1)
+const GRAVITY = 20
+const ACCELERATION = 50
+const MAX_SPEED = 200
+const JUMP_HEIGHT = -550
+const MIN_JUMP_HEIGHT = -250
 
-var velocity = Vector2.ZERO
-var jumping = false
-onready var jt = $jump_timer
 
-func get_input():
-	var dir = Input.get_action_strength("right") - Input.get_action_strength("left")
-	if dir != 0:
-		velocity.x = lerp(velocity.x, dir * speed, acceleration)
-	else:
-		velocity.x = lerp(velocity.x, 0, friction)
-	
+var motion = Vector2()
+
+
+
+
 func _physics_process(delta):
-	get_input()
-	velocity.y += gravity * delta
-	jump()
-	velocity = move_and_slide(velocity, Vector2.UP)
+	motion.y += GRAVITY
+	var friction = false
 	
-
-
-func jump():
-	if jumping:
-		velocity.y = lerp(jump_speed,jump_speed_max,(jt.wait_time-jt.time_left)*10)
+	if Input.is_action_pressed("right"):
+		motion.x = min(motion.x+ACCELERATION, MAX_SPEED)
 		
-	if Input.is_action_pressed("jump") && is_on_floor():
-		jt.start()
-		jumping = true
-	elif Input.is_action_just_released("jump"):
-		jumping = false	
+	elif Input.is_action_pressed("left"):
+		motion.x = max(motion.x-ACCELERATION, -MAX_SPEED)
+		
+	else:
+		friction = true
 	
-		
+	if is_on_floor():
+		if Input.is_action_just_pressed("jump"):
+			motion.y = JUMP_HEIGHT
+		if friction == true:
+			motion.x = lerp(motion.x, 0, .2)
+	else:
 
-func _on_jump_timer_timeout():
-	jumping = false
+		motion.x = lerp(motion.x, 0, .05)
+		
+		# Variable jump height
+		if Input.is_action_just_released("jump") && motion.y < MIN_JUMP_HEIGHT:
+			motion.y = MIN_JUMP_HEIGHT
+	
+	
+	motion = move_and_slide(motion, UP, 5, 4, PI/3)
+	
