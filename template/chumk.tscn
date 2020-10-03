@@ -1,5 +1,205 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://template/tile.tscn" type="PackedScene" id=1]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="floor" type="Node2D" parent="."]
+
+[node name="ice_tile" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 592 )
+
+[node name="ice_tile2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 592 )
+
+[node name="ice_tile3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 592 )
+
+[node name="ice_tile4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 560 )
+
+[node name="ice_tile5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 592 )
+
+[node name="ice_tile6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 560 )
+
+[node name="ice_tile7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 592 )
+
+[node name="ice_tile8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 560 )
+
+[node name="ice_tile9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 592 )
+
+[node name="ice_tile10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 560 )
+
+[node name="ice_tile11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 144, 592 )
+
+[node name="ice_tile12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 176, 560 )
+
+[node name="ice_tile13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 176, 592 )
+
+[node name="ice_tile14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 144, 560 )
+
+[node name="ice_tile15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208, 592 )
+
+[node name="ice_tile16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 560 )
+
+[node name="ice_tile17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 592 )
+
+[node name="ice_tile18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208, 560 )
+
+[node name="ice_tile19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 272, 592 )
+
+[node name="ice_tile20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 304, 560 )
+
+[node name="ice_tile21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 304, 592 )
+
+[node name="ice_tile22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 272, 560 )
+
+[node name="ice_tile23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 336, 592 )
+
+[node name="ice_tile24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 368, 560 )
+
+[node name="ice_tile25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 368, 592 )
+
+[node name="ice_tile26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 336, 560 )
+
+[node name="ice_tile27" parent="." instance=ExtResource( 1 )]
+position = Vector2( 400, 592 )
+
+[node name="ice_tile28" parent="." instance=ExtResource( 1 )]
+position = Vector2( 432, 560 )
+
+[node name="ice_tile29" parent="." instance=ExtResource( 1 )]
+position = Vector2( 432, 592 )
+
+[node name="ice_tile30" parent="." instance=ExtResource( 1 )]
+position = Vector2( 400, 560 )
+
+[node name="ice_tile31" parent="." instance=ExtResource( 1 )]
+position = Vector2( 464, 592 )
+
+[node name="ice_tile32" parent="." instance=ExtResource( 1 )]
+position = Vector2( 496, 560 )
+
+[node name="ice_tile33" parent="." instance=ExtResource( 1 )]
+position = Vector2( 496, 592 )
+
+[node name="ice_tile34" parent="." instance=ExtResource( 1 )]
+position = Vector2( 464, 560 )
+
+[node name="ice_tile35" parent="." instance=ExtResource( 1 )]
+position = Vector2( 528, 592 )
+
+[node name="ice_tile36" parent="." instance=ExtResource( 1 )]
+position = Vector2( 560, 560 )
+
+[node name="ice_tile37" parent="." instance=ExtResource( 1 )]
+position = Vector2( 560, 592 )
+
+[node name="ice_tile38" parent="." instance=ExtResource( 1 )]
+position = Vector2( 528, 560 )
+
+[node name="ice_tile39" parent="." instance=ExtResource( 1 )]
+position = Vector2( 592, 592 )
+
+[node name="ice_tile40" parent="." instance=ExtResource( 1 )]
+position = Vector2( 624, 560 )
+
+[node name="ice_tile41" parent="." instance=ExtResource( 1 )]
+position = Vector2( 624, 592 )
+
+[node name="ice_tile42" parent="." instance=ExtResource( 1 )]
+position = Vector2( 592, 560 )
+
+[node name="ice_tile43" parent="." instance=ExtResource( 1 )]
+position = Vector2( 656, 592 )
+
+[node name="ice_tile44" parent="." instance=ExtResource( 1 )]
+position = Vector2( 688, 560 )
+
+[node name="ice_tile45" parent="." instance=ExtResource( 1 )]
+position = Vector2( 688, 592 )
+
+[node name="ice_tile46" parent="." instance=ExtResource( 1 )]
+position = Vector2( 656, 560 )
+
+[node name="ice_tile47" parent="." instance=ExtResource( 1 )]
+position = Vector2( 720, 592 )
+
+[node name="ice_tile48" parent="." instance=ExtResource( 1 )]
+position = Vector2( 752, 560 )
+
+[node name="ice_tile49" parent="." instance=ExtResource( 1 )]
+position = Vector2( 752, 592 )
+
+[node name="ice_tile50" parent="." instance=ExtResource( 1 )]
+position = Vector2( 720, 560 )
+
+[node name="ice_tile51" parent="." instance=ExtResource( 1 )]
+position = Vector2( 784, 592 )
+
+[node name="ice_tile52" parent="." instance=ExtResource( 1 )]
+position = Vector2( 816, 560 )
+
+[node name="ice_tile53" parent="." instance=ExtResource( 1 )]
+position = Vector2( 816, 592 )
+
+[node name="ice_tile54" parent="." instance=ExtResource( 1 )]
+position = Vector2( 784, 560 )
+
+[node name="ice_tile55" parent="." instance=ExtResource( 1 )]
+position = Vector2( 848, 592 )
+
+[node name="ice_tile56" parent="." instance=ExtResource( 1 )]
+position = Vector2( 880, 560 )
+
+[node name="ice_tile57" parent="." instance=ExtResource( 1 )]
+position = Vector2( 880, 592 )
+
+[node name="ice_tile58" parent="." instance=ExtResource( 1 )]
+position = Vector2( 848, 560 )
+
+[node name="ice_tile59" parent="." instance=ExtResource( 1 )]
+position = Vector2( 912, 592 )
+
+[node name="ice_tile60" parent="." instance=ExtResource( 1 )]
+position = Vector2( 944, 560 )
+
+[node name="ice_tile61" parent="." instance=ExtResource( 1 )]
+position = Vector2( 944, 592 )
+
+[node name="ice_tile62" parent="." instance=ExtResource( 1 )]
+position = Vector2( 912, 560 )
+
+[node name="ice_tile63" parent="." instance=ExtResource( 1 )]
+position = Vector2( 976, 592 )
+
+[node name="ice_tile64" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1008, 560 )
+
+[node name="ice_tile65" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1008, 592 )
+
+[node name="ice_tile66" parent="." instance=ExtResource( 1 )]
+position = Vector2( 976, 560 )
