@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Character/player.tscn" type="PackedScene" id=1]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 424, 16 )
 
 [node name="root" type="Node2D"]
@@ -28,4 +28,4 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform/KinematicBody2D"]
 position = Vector2( 360, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
