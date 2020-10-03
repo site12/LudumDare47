@@ -19,8 +19,6 @@ func _physics_process(delta):
 	var friction = false
 	climb(friction)
 	movement(friction)
-	
-	print(grabbing)
 	motion = move_and_slide(motion, UP, 5, 4, PI/3)
 	
 
