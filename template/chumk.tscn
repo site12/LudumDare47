@@ -18,6 +18,27 @@ position = Vector2( 16, 592 )
 [node name="ice_tile4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 48, 560 )
 
+[node name="ice_tile67" parent="." instance=ExtResource( 1 )]
+position = Vector2( 304, 528 )
+
+[node name="ice_tile68" parent="." instance=ExtResource( 1 )]
+position = Vector2( 304, 496 )
+
+[node name="ice_tile69" parent="." instance=ExtResource( 1 )]
+position = Vector2( 304, 464 )
+
+[node name="ice_tile70" parent="." instance=ExtResource( 1 )]
+position = Vector2( 528, 528 )
+
+[node name="ice_tile71" parent="." instance=ExtResource( 1 )]
+position = Vector2( 528, 496 )
+
+[node name="ice_tile72" parent="." instance=ExtResource( 1 )]
+position = Vector2( 528, 464 )
+
+[node name="ice_tile73" parent="." instance=ExtResource( 1 )]
+position = Vector2( 528, 432 )
+
 [node name="ice_tile5" parent="." instance=ExtResource( 1 )]
 position = Vector2( 48, 592 )
 
