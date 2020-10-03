@@ -29,3 +29,108 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform/KinematicBody2D"]
 position = Vector2( 360, 16 )
 shape = SubResource( 1 )
+
+[node name="platform4" type="Node2D" parent="."]
+position = Vector2( -560, 272 )
+scale = Vector2( 2, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="platform4"]
+margin_left = -64.0
+margin_right = 784.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="platform4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform4/KinematicBody2D"]
+position = Vector2( 360, 16 )
+shape = SubResource( 1 )
+
+[node name="platform5" type="Node2D" parent="."]
+position = Vector2( 960, -24 )
+scale = Vector2( 0.1, 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="platform5"]
+margin_left = -64.0
+margin_right = 784.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="platform5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform5/KinematicBody2D"]
+position = Vector2( 360, 16 )
+shape = SubResource( 1 )
+
+[node name="platform6" type="Node2D" parent="."]
+position = Vector2( -720, -40 )
+scale = Vector2( 0.1, 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="platform6"]
+margin_left = -64.0
+margin_right = 784.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="platform6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform6/KinematicBody2D"]
+position = Vector2( 360, 16 )
+shape = SubResource( 1 )
+
+[node name="platform2" type="Node2D" parent="."]
+position = Vector2( 336, -8 )
+scale = Vector2( 0.25, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="platform2"]
+margin_left = -64.0
+margin_right = 784.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="platform2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2/KinematicBody2D"]
+position = Vector2( 360, 16 )
+shape = SubResource( 1 )
+
+[node name="platform3" type="Node2D" parent="."]
+position = Vector2( -16, -136 )
+scale = Vector2( 0.25, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="platform3"]
+margin_left = -64.0
+margin_right = 784.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="platform3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform3/KinematicBody2D"]
+position = Vector2( 360, 16 )
+shape = SubResource( 1 )
