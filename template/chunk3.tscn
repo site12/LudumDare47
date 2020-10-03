@@ -1,9 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://template/ground.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Character/player.tscn" type="PackedScene" id=2]
 
-[node name="Node2D" type="Node2D"]
+[node name="chunk3" type="Node2D"]
 
 [node name="floor" type="Node2D" parent="."]
 
@@ -658,6 +657,3 @@ position = Vector2( 400, 112 )
 
 [node name="ice_tile154" parent="obstacle" instance=ExtResource( 1 )]
 position = Vector2( 528, 304 )
-
-[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 176, 384 )

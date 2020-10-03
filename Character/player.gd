@@ -23,6 +23,14 @@ func _physics_process(delta):
 	movement(friction)
 	#direction()
 	motion = move_and_slide(motion, UP, 5, 4, PI/3)
+#	if position.x > 2560:
+#		position.x -= 3072
+#		$camerapos/Camera2D.reset_smoothing()
+#	elif position.x < -1536:
+#		position.x += 3072
+#		$camerapos/Camera2D.reset_smoothing()
+func _process(_delta):
+	pass
 	
 
 func direction():
