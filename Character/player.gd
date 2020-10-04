@@ -118,6 +118,6 @@ func die():
 
 func _on_respawn_timer_timeout():
 	#Respawning
-	position = get_parent().get_node('Level/spawn_point')
+	position = get_parent().get_node('Level/spawn_point').get_global_transform().get_origin()
 	canmove = true
 	$AnimatedSprite.rotation = 0
