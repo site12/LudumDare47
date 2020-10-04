@@ -3,24 +3,24 @@
 [ext_resource path="res://ice layer/IceTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://ice layer/Misc Assets/fog.shader" type="Shader" id=3]
-[ext_resource path="res://ice layer/Icicle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ice layer/Icicle Spawner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Warp.shader" type="Shader" id=5]
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 3 )
 shader_param/color = Vector3( 0.35, 0.48, 0.95 )
 shader_param/OCTAVES = 4
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 5 )
 
 [node name="chunk2" type="Node2D"]
 
 [node name="BackTileMap" type="TileMap" parent="."]
-material = SubResource( 3 )
+material = SubResource( 1 )
 scale = Vector2( 0.25, 0.25 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 512, 512 )
@@ -31,28 +31,24 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 1 )
+material = SubResource( 2 )
 position = Vector2( 2048, 832 )
 scale = Vector2( 42.6667, 17.3333 )
 texture = ExtResource( 2 )
 
 [node name="Icicles" type="Node2D" parent="."]
 
-[node name="Icicle" parent="Icicles" instance=ExtResource( 4 )]
-position = Vector2( 1594.51, 332.354 )
-rotation = 3.14159
-scale = Vector2( 1, -1 )
+[node name="Icicle Spawner" parent="Icicles" instance=ExtResource( 4 )]
+position = Vector2( 1600, 336 )
 
-[node name="Icicle2" parent="Icicles" instance=ExtResource( 4 )]
-position = Vector2( 2494.57, 332.354 )
-rotation = 3.14159
-scale = Vector2( 1, -1 )
+[node name="Icicle Spawner2" parent="Icicles" instance=ExtResource( 4 )]
+position = Vector2( 2368, 328 )
 
-[node name="Icicle3" parent="Icicles" instance=ExtResource( 4 )]
-position = Vector2( 2363.61, 332.354 )
+[node name="Icicle Spawner3" parent="Icicles" instance=ExtResource( 4 )]
+position = Vector2( 2496, 328 )
 
 [node name="FrontTileMap" type="TileMap" parent="."]
-material = SubResource( 2 )
+material = SubResource( 3 )
 scale = Vector2( 0.25, 0.25 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 512, 512 )

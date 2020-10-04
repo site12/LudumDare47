@@ -6,6 +6,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://ice layer/Misc Assets/fog.shader" type="Shader" id=5]
 [ext_resource path="res://Warp.shader" type="Shader" id=6]
+[ext_resource path="res://ice layer/Icicle Spawner.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 6 )
@@ -44,9 +45,6 @@ shader = ExtResource( 6 )
 shader = ExtResource( 5 )
 shader_param/color = Vector3( 0.35, 0.48, 0.95 )
 shader_param/OCTAVES = 4
-
-[sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( 512, 512, 0, 512, 0, 0, 512, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 512, 512, 0, 512, 0, 0, 512, 0 )
@@ -95,7 +93,6 @@ points = PoolVector2Array( 512, 256, 0, 256, 0, 0, 512, 0 )
 0/region = Rect2( 0, 0, 512, 512 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
-0/occluder = SubResource( 3 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -321,6 +318,20 @@ material = SubResource( 3 )
 position = Vector2( 2048, 407.999 )
 scale = Vector2( 42.6667, 27.1667 )
 texture = ExtResource( 4 )
+
+[node name="Icicles" type="Node2D" parent="."]
+
+[node name="Icicle Spawner" parent="Icicles" instance=ExtResource( 7 )]
+position = Vector2( 1736, 336 )
+
+[node name="Icicle Spawner2" parent="Icicles" instance=ExtResource( 7 )]
+position = Vector2( 2376, 328 )
+
+[node name="Icicle Spawner3" parent="Icicles" instance=ExtResource( 7 )]
+position = Vector2( 3144, 328 )
+
+[node name="Icicle Spawner4" parent="Icicles" instance=ExtResource( 7 )]
+position = Vector2( 3912, 328 )
 
 [node name="FrontTileMap" type="TileMap" parent="."]
 material = SubResource( 1 )
