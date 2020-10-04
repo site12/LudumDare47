@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
 const UP = Vector2(0, -1)
-var GRAVITY = 35
-var ACCELERATION = 50
+var GRAVITY = 9.8 *1000
+var ACCELERATION = 100
 var FRICTION = 0.5
-const MAX_SPEED = 600
-const JUMP_HEIGHT = -700*1.8
+const MAX_SPEED = 1000
+const JUMP_HEIGHT = -700*5
 const MIN_JUMP_HEIGHT = -400*1.8
 
 
@@ -20,7 +20,7 @@ onready var camerapos = $camerapos
 
 
 func _physics_process(delta):
-	motion.y += GRAVITY
+	motion.y += GRAVITY*delta
 	var friction = false
 	movement(friction)
 	direction()
@@ -29,16 +29,17 @@ func _physics_process(delta):
 		motion = move_and_slide(motion, UP)
 	
 func slide():
-	if is_on_wall() and not is_on_floor():
+	if is_on_wall() and not is_on_floor() and motion.y < 400:
+		
 		sliding = true
 		motion.y = $RayCast2D.position.y
-		motion.y += 500
+		motion.y += 10
 		if $RayCast2D.collide_with_bodies:
 			pass
 		
 	else:
 		sliding = false
-		GRAVITY = 35
+		#GRAVITY = 35
 	
 func direction():
 	if dir == 1:
@@ -64,7 +65,7 @@ func movement(friction):
 	#jump
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
-			motion.y = JUMP_HEIGHT
+			motion.y += JUMP_HEIGHT
 			
 		
 		if friction == true:
@@ -73,7 +74,7 @@ func movement(friction):
 	elif is_on_wall():
 		if Input.is_action_just_pressed("jump"):
 
-			motion.y = JUMP_HEIGHT
+			motion.y += JUMP_HEIGHT
 			motion.x =  dir*(7 * $RayCast2D.cast_to.x)
 			print(-dir*(7 * $RayCast2D.cast_to.x))
 			
