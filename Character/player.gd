@@ -14,6 +14,7 @@ var grabbing = false
 var jumping = false
 var sliding = true
 var canmove = true
+var on_ice = false
 var dir = 1
 var on_wall = false
 var which_wall = 0
@@ -47,8 +48,8 @@ func slide(delta):
 		# if !jumping:
 		# 	motion.y += 70
 			
-		if $RayCast2D.collide_with_bodies:
-			pass
+		# if $RayCast2D.collide_with_bodies:
+		# 	pass
 		
 	else:
 		sliding = false
@@ -56,32 +57,34 @@ func slide(delta):
 	
 func direction():
 	if dir == 1:
-		$RayCast2D.scale.x = -1
+		# $RayCast2D.scale.x = -1
 		$AnimatedSprite.flip_h = true
 	if dir == -1:
-		$RayCast2D.scale.x = 1
+		# $RayCast2D.scale.x = 1
 		$AnimatedSprite.flip_h = false
 		
 func movement(friction):
 	if Input.is_action_just_released("jump") and motion.y < 0:
+		### Better Variable Jump Level
 		motion.y = lerp(motion.y, 0, 0.5)
 	# if Input.is_action_pressed("jump"):
 	# 	GRAVITY = 9.8 * 250
 	# else:
 	# 	GRAVITY = 9.8 * 1000
 	if canmove:
-		#left and right
+		### Left and right
 		if Input.is_action_pressed("right"):
-			if motion.x < 0 and is_on_floor():
+			if not on_ice and motion.x < 0 and is_on_floor():
 				motion.x = lerp(motion.x, 0, 0.5)
 			motion.x = min(motion.x+ACCELERATION, MAX_SPEED)
 			dir = -1
 		
 		elif Input.is_action_pressed("left"):
-			if motion.x > 0 and is_on_floor():
+			if not on_ice and motion.x > 0 and is_on_floor():
 				motion.x = lerp(motion.x, 0, 0.5)
 			motion.x = max(motion.x-ACCELERATION, -MAX_SPEED)
 			dir = 1
+
 		else:
 			friction = true
 	
@@ -93,12 +96,14 @@ func movement(friction):
 			# $jump_timer.start()
 			motion.y += JUMP_HEIGHT
 			jumping = true
-		if friction == true:
+		if friction == true and not on_ice:
 			motion.x = lerp(motion.x, 0, FRICTION)
 	
 	elif on_wall:
 		jumping = false
-		if Input.is_action_just_pressed("jump"):
+		# if on_ice:
+		# 	motion.y += (GRAVITY*0.01)
+		if Input.is_action_just_pressed("jump") and not on_ice:
 			# GRAVITY = 9.8 * 500
 			# $jump_timer.start()
 			jumping = true
@@ -114,7 +119,8 @@ func movement(friction):
 		# 	motion.x = lerp(motion.x, 0, FRICTION)
 	else:
 		###  air friction?
-		motion.x = lerp(motion.x, 0, 0.05)
+		# motion.x = lerp(motion.x, 0, 0.05)
+		pass
 		
 		# Variable jump height
 		# if Input.is_action_just_released("jump") && motion.y < MIN_JUMP_HEIGHT:
