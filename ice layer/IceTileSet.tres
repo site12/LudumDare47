@@ -115,14 +115,8 @@ polygon = PoolVector2Array( 0, 320, 64, 224, 128, 320, 192, 224, 224, 192, 288, 
 4/shape_offset = Vector2( 0, 0 )
 4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 4/shape_one_way = false
-4/shape_one_way_margin = 1.0
-4/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": null,
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
 4/z_index = 0
 5/name = "IceCave_TileSet.png 5"
 5/texture = ExtResource( 1 )
@@ -171,14 +165,8 @@ polygon = PoolVector2Array( 0, 320, 64, 224, 128, 320, 192, 224, 224, 192, 288, 
 7/shape_offset = Vector2( 0, 0 )
 7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 7/shape_one_way = false
-7/shape_one_way_margin = 1.0
-7/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": null,
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
 7/z_index = 0
 8/name = "IceCave_TileSet.png 8"
 8/texture = ExtResource( 1 )
@@ -207,14 +195,8 @@ polygon = PoolVector2Array( 0, 320, 64, 224, 128, 320, 192, 224, 224, 192, 288, 
 9/shape_offset = Vector2( 0, 0 )
 9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 9/shape_one_way = false
-9/shape_one_way_margin = 1.0
-9/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": null,
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
 9/z_index = 0
 10/name = "IceCave_TileSet.png 10"
 10/texture = ExtResource( 1 )
