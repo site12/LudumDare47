@@ -33,6 +33,7 @@ position = Vector2( -1024, 0 )
 position = Vector2( 1024, 0 )
 
 [node name="chunk1" parent="Level" instance=ExtResource( 2 )]
+script = null
 
 [node name="End" type="Area2D" parent="Level"]
 position = Vector2( 2496, 584 )
