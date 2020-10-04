@@ -15,9 +15,6 @@ extents = Vector2( 96, 288 )
 [node name="root" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 144, 264 )
-
 [node name="chunk1" parent="." instance=ExtResource( 4 )]
 script = null
 
@@ -32,6 +29,9 @@ position = Vector2( -4096, 0 )
 
 [node name="chunk4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 8192, 0 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1280, 880 )
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2( 9352, 1080 )
