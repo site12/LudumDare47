@@ -7,7 +7,7 @@
 [ext_resource path="res://main.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64, 288 )
+extents = Vector2( 152, 632 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 96, 288 )
@@ -15,33 +15,39 @@ extents = Vector2( 96, 288 )
 [node name="root" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="End" type="Area2D" parent="."]
-position = Vector2( 2496, 584 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
-position = Vector2( 16, -264 )
-shape = SubResource( 1 )
-
-[node name="Back" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Back"]
-position = Vector2( -1664, 320 )
-shape = SubResource( 2 )
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 144, 264 )
 
 [node name="chunk1" parent="." instance=ExtResource( 4 )]
 script = null
 
-[node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1280, 816 )
-
 [node name="chunk2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 4096, 0 )
 
+[node name="chunk2b" parent="." instance=ExtResource( 2 )]
+position = Vector2( -8192, 0 )
+
 [node name="chunk3" parent="." instance=ExtResource( 3 )]
 position = Vector2( -4096, 0 )
+
+[node name="chunk4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 8192, 0 )
+
+[node name="End" type="Area2D" parent="."]
+position = Vector2( 9352, 1080 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2( 0, -328 )
+shape = SubResource( 1 )
+
+[node name="Back" type="Area2D" parent="."]
+position = Vector2( -4936, 1184 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back"]
+shape = SubResource( 2 )
 [connection signal="body_entered" from="End" to="." method="_on_End_body_entered"]
 [connection signal="body_entered" from="Back" to="." method="_on_Back_body_entered"]
