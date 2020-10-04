@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Character/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ice layer/icechunk2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ice layer/icechunk3.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ice layer/icechunk1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://main.gd" type="Script" id=5]
+[ext_resource path="res://sounds/music/overview.wav" type="AudioStream" id=6]
+[ext_resource path="res://sounds/music/ice layer.wav" type="AudioStream" id=7]
+[ext_resource path="res://audio.gd" type="Script" id=8]
+[ext_resource path="res://sounds/music/cave_ambience.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 152, 632 )
@@ -54,5 +58,24 @@ position = Vector2( 768, 920 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 768, 920 )
+
+[node name="audio" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="cave_ambience" type="AudioStreamPlayer2D" parent="audio"]
+stream = ExtResource( 9 )
+autoplay = true
+
+[node name="overview" type="AudioStreamPlayer2D" parent="audio"]
+stream = ExtResource( 6 )
+autoplay = true
+
+[node name="cave_layer" type="AudioStreamPlayer2D" parent="audio"]
+
+[node name="bio_layer" type="AudioStreamPlayer2D" parent="audio"]
+
+[node name="ice_layer" type="AudioStreamPlayer2D" parent="audio"]
+stream = ExtResource( 7 )
+autoplay = true
 [connection signal="body_entered" from="Level/End" to="." method="_on_End_body_entered"]
 [connection signal="body_entered" from="Level/Back" to="." method="_on_Back_body_entered"]
