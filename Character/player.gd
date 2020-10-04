@@ -56,12 +56,20 @@ func slide(delta):
 		#GRAVITY = 35
 	
 func direction():
-	if dir == 1:
+	if dir == 1 and motion.x == 0:
 		# $RayCast2D.scale.x = -1
 		$AnimatedSprite.flip_h = true
-	if dir == -1:
+		$AnimatedSprite.play("idle")
+	elif dir == 1:
+		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.play("run")
+	if dir == -1 and motion.x == 0:
 		# $RayCast2D.scale.x = 1
 		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.play("idle")
+	elif dir == -1:
+		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.play("run")
 		
 func movement(friction):
 	if Input.is_action_just_released("jump") and motion.y < 0:
