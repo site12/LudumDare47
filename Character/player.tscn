@@ -64,7 +64,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=62]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 80, 127 )
+extents = Vector2( 67.243, 127 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
