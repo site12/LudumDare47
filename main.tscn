@@ -32,24 +32,24 @@ position = Vector2( -4096, 0 )
 [node name="chunk3b" parent="Level" instance=ExtResource( 3 )]
 position = Vector2( 8192, 0 )
 
-[node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512, 984 )
-
-[node name="End" type="Area2D" parent="."]
+[node name="End" type="Area2D" parent="Level"]
 position = Vector2( 9352, 1080 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/End"]
 position = Vector2( 0, -328 )
 shape = SubResource( 1 )
 
-[node name="Back" type="Area2D" parent="."]
+[node name="Back" type="Area2D" parent="Level"]
 position = Vector2( -4936, 1184 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Back"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Back"]
 shape = SubResource( 2 )
-[connection signal="body_entered" from="End" to="." method="_on_End_body_entered"]
-[connection signal="body_entered" from="Back" to="." method="_on_Back_body_entered"]
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 984 )
+[connection signal="body_entered" from="Level/End" to="." method="_on_End_body_entered"]
+[connection signal="body_entered" from="Level/Back" to="." method="_on_Back_body_entered"]
