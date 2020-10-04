@@ -114,3 +114,10 @@ func die():
 	$AnimatedSprite.rotation = 90
 	$audio.stream = sound
 	$audio.play()
+	$respawn_timer.start()
+
+func _on_respawn_timer_timeout():
+	#Respawning
+	position = get_parent().get_node('Level/spawn_point')
+	canmove = true
+	$AnimatedSprite.rotation = 0

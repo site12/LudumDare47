@@ -129,7 +129,7 @@ position = Vector2( 9.53674e-07, 9.53674e-07 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 39
+frame = 20
 playing = true
 
 [node name="Light2D" type="Light2D" parent="."]
@@ -171,4 +171,8 @@ cast_to = Vector2( -70, 0 )
 position = Vector2( 0, 49.4519 )
 enabled = true
 cast_to = Vector2( 70, 0 )
+
+[node name="respawn_timer" type="Timer" parent="."]
+one_shot = true
 [connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="respawn_timer" to="." method="_on_respawn_timer_timeout"]
