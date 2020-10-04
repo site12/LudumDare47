@@ -53,7 +53,7 @@ func movement(friction):
 		friction = true
 	
 	#jump
-	if is_on_floor() || grabbing:
+	if is_on_floor() || grabbing || is_on_wall():
 		if grabbing:
 			grabbing = false
 		jt.start()
