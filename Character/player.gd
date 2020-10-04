@@ -5,7 +5,7 @@ var GRAVITY = 9.8 *1000
 var ACCELERATION = 75
 var FRICTION = 1
 const MAX_SPEED = 700*1.5
-const JUMP_HEIGHT = -1500*1.9
+const JUMP_HEIGHT = -1500 *1.2
 const MIN_JUMP_HEIGHT = -500*2
 
 
@@ -63,6 +63,10 @@ func direction():
 		$AnimatedSprite.flip_h = false
 		
 func movement(friction):
+	# if Input.is_action_pressed("jump"):
+	# 	GRAVITY = 9.8 * 250
+	# else:
+	# 	GRAVITY = 9.8 * 1000
 	if canmove:
 		#left and right
 		if Input.is_action_pressed("right"):
@@ -79,6 +83,8 @@ func movement(friction):
 	if is_on_floor():
 		jumping = false
 		if Input.is_action_just_pressed("jump"):
+			GRAVITY = 9.8 * 500
+			$jump_timer.start()
 			motion.y += JUMP_HEIGHT
 			jumping = true
 		if friction == true:
@@ -87,9 +93,11 @@ func movement(friction):
 	elif on_wall:
 		jumping = false
 		if Input.is_action_just_pressed("jump"):
+			GRAVITY = 9.8 * 500
+			# $jump_timer.start()
 			jumping = true
 			
-			var motion_change =  (10 * Vector2(256,-256))#$RayCast2D/Sprite.position)
+			var motion_change =  (6 * Vector2(256,-256))#$RayCast2D/Sprite.position)
 			print(dir)
 			motion_change.x *= which_wall
 			motion = motion_change
@@ -103,9 +111,9 @@ func movement(friction):
 		motion.x = lerp(motion.x, 0, 0.05)
 		
 		# Variable jump height
-		if Input.is_action_just_released("jump") && motion.y < MIN_JUMP_HEIGHT:
-			motion.y = MIN_JUMP_HEIGHT
-			pass
+		# if Input.is_action_just_released("jump") && motion.y < MIN_JUMP_HEIGHT:
+		# 	motion.y = MIN_JUMP_HEIGHT
+		# 	pass
 func die():
 	canmove = false
 	var sound = load("res://sounds/sfx/death/Roblox Death Sound - Sound Effect (HD).wav")
@@ -121,3 +129,9 @@ func _on_respawn_timer_timeout():
 	position = get_parent().get_node('Level/spawn_point').get_global_transform().get_origin()
 	canmove = true
 	$AnimatedSprite.rotation = 0
+
+func _on_jump_timer_timeout():
+	if Input.is_action_pressed('jump'):
+		GRAVITY = 9.8 * 250
+	else:
+		GRAVITY = 9.8 * 1000

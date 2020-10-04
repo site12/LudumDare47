@@ -110,7 +110,7 @@ position = Vector2( -1.46236, 10.1539 )
 shape = SubResource( 1 )
 
 [node name="jump_timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.15
 one_shot = true
 
 [node name="Position2D" type="Position2D" parent="."]
@@ -129,7 +129,6 @@ position = Vector2( 9.53674e-07, 9.53674e-07 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 20
 playing = true
 
 [node name="Light2D" type="Light2D" parent="."]
