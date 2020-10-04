@@ -62,7 +62,7 @@
 [ext_resource path="res://Character/anims/Idle/Idle00010.png" type="Texture" id=60]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 80, 144 )
+extents = Vector2( 80, 127 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -78,6 +78,7 @@ collision_mask = 2147483655
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 17 )
 shape = SubResource( 1 )
 
 [node name="jump_timer" type="Timer" parent="."]
@@ -100,6 +101,5 @@ position = Vector2( 9.53674e-07, 9.53674e-07 )
 scale = Vector2( 0.5625, 0.5625 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 25
 playing = true
 [connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]

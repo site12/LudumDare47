@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const UP = Vector2(0, -1)
-var GRAVITY = 30
+var GRAVITY = 35
 var ACCELERATION = 50
 var FRICTION = 0.5
 const MAX_SPEED = 500
