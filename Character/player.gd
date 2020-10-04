@@ -72,10 +72,14 @@ func movement(friction):
 	if canmove:
 		#left and right
 		if Input.is_action_pressed("right"):
+			if motion.x < 0 and is_on_floor():
+				motion.x = lerp(motion.x, 0, 0.5)
 			motion.x = min(motion.x+ACCELERATION, MAX_SPEED)
 			dir = -1
 		
 		elif Input.is_action_pressed("left"):
+			if motion.x > 0 and is_on_floor():
+				motion.x = lerp(motion.x, 0, 0.5)
 			motion.x = max(motion.x-ACCELERATION, -MAX_SPEED)
 			dir = 1
 		else:
@@ -128,7 +132,7 @@ func die():
 
 func _on_respawn_timer_timeout():
 	#Respawning
-	position = get_parent().get_node('Level/spawn_point').get_global_transform().get_origin()
+	set_deferred('position', get_parent().get_node('Level/spawn_point').get_global_transform().get_origin())
 	canmove = true
 	$AnimatedSprite.rotation = 0
 
