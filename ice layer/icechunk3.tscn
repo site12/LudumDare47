@@ -63,6 +63,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 2048, 896 )
+scale = Vector2( 42.6667, 18.6667 )
+texture = ExtResource( 3 )
+
 [node name="Icicles" type="Node2D" parent="."]
 
 [node name="Icicle" parent="Icicles" instance=ExtResource( 5 )]
@@ -86,9 +92,3 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 1073741824, 0, 
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 2 )
-position = Vector2( 2128.5, 988.25 )
-scale = Vector2( 45.3333, 21.6667 )
-texture = ExtResource( 3 )

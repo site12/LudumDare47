@@ -24,12 +24,9 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 1 )
-position = Vector2( 2272, 1152 )
-scale = Vector2( 48.3333, 25 )
+position = Vector2( 2048, 832 )
+scale = Vector2( 42.6667, 17.3333 )
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Icicles" type="Node2D" parent="."]
 

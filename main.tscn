@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Character/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://template/chunk1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://template/chunk3.tscn" type="PackedScene" id=3]
-[ext_resource path="res://template/chunk2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ice layer/icechunk2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ice layer/icechunk3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ice layer/icechunk1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://main.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -18,37 +18,30 @@ script = ExtResource( 5 )
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 144, 264 )
 
-[node name="Level" type="Node2D" parent="."]
-
-[node name="chunk5" parent="Level" instance=ExtResource( 4 )]
-position = Vector2( -2048, 0 )
-
-[node name="chunk4" parent="Level" instance=ExtResource( 3 )]
-position = Vector2( 2048, 0 )
-
-[node name="chunk3" parent="Level" instance=ExtResource( 3 )]
-position = Vector2( -1024, 0 )
-
-[node name="chunk2" parent="Level" instance=ExtResource( 4 )]
-position = Vector2( 1024, 0 )
-
-[node name="chunk1" parent="Level" instance=ExtResource( 2 )]
-
-[node name="End" type="Area2D" parent="Level"]
+[node name="End" type="Area2D" parent="."]
 position = Vector2( 2496, 584 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/End"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 position = Vector2( 16, -264 )
 shape = SubResource( 1 )
 
-[node name="Back" type="Area2D" parent="Level"]
+[node name="Back" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Back"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back"]
 position = Vector2( -1664, 320 )
 shape = SubResource( 2 )
-[connection signal="body_entered" from="Level/End" to="." method="_on_End_body_entered"]
-[connection signal="body_entered" from="Level/Back" to="." method="_on_Back_body_entered"]
+
+[node name="chunk1" parent="." instance=ExtResource( 4 )]
+script = null
+
+[node name="chunk2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 4096, 0 )
+
+[node name="chunk3" parent="." instance=ExtResource( 3 )]
+position = Vector2( -4096, 0 )
+[connection signal="body_entered" from="End" to="." method="_on_End_body_entered"]
+[connection signal="body_entered" from="Back" to="." method="_on_Back_body_entered"]
