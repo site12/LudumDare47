@@ -108,7 +108,7 @@ func movement(friction):
 			# $jump_timer.start()
 			jumping = true
 			
-			var motion_change =  (6 * Vector2(256,-256))#$RayCast2D/Sprite.position)
+			var motion_change =  (5 * Vector2(256,-256))#$RayCast2D/Sprite.position)
 			print(dir)
 			motion_change.x *= which_wall
 			motion = motion_change
