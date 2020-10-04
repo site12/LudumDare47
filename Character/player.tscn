@@ -64,7 +64,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=62]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 67.243, 127 )
+extents = Vector2( 34.4624, 78.5083 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -106,7 +106,7 @@ collision_mask = 2147483655
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 17 )
+position = Vector2( -1.46236, 10.1539 )
 shape = SubResource( 1 )
 
 [node name="jump_timer" type="Timer" parent="."]
@@ -126,16 +126,16 @@ offset_v = -1.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 9.53674e-07, 9.53674e-07 )
-scale = Vector2( 0.5625, 0.5625 )
+scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 10
+frame = 28
 playing = true
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 61 )
 texture_scale = 5.1
-energy = 0.22
+energy = 0.35
 shadow_enabled = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

@@ -3,8 +3,8 @@ extends KinematicBody2D
 const UP = Vector2(0, -1)
 var GRAVITY = 9.8 *1000
 var ACCELERATION = 75
-var FRICTION = 0.5
-const MAX_SPEED = 700
+var FRICTION = 1
+const MAX_SPEED = 700*1.5
 const JUMP_HEIGHT = -1500*1.9
 const MIN_JUMP_HEIGHT = -500*2
 
@@ -24,16 +24,19 @@ func _physics_process(delta):
 	var friction = false
 	movement(friction)
 	direction()
-	slide()
+	slide(delta)
 	if canmove:	
 		motion = move_and_slide(motion, UP)
 	
-func slide():
+func slide(delta):
 	if is_on_wall() and Input.is_action_pressed("grab"):
 		
-		motion.y = $RayCast2D.position.y
-		if !jumping:
-			motion.y += 70
+		# motion.y = 145
+		if motion.y >0:
+			motion.y += (-GRAVITY+1000)*delta
+		# if !jumping:
+		# 	motion.y += 70
+			
 		if $RayCast2D.collide_with_bodies:
 			pass
 		
@@ -76,8 +79,11 @@ func movement(friction):
 		if Input.is_action_just_pressed("jump"):
 			jumping = true
 			
-			motion +=  dir*(10 * $RayCast2D.cast_to)
-			print(-dir*(7 * $RayCast2D.cast_to.x))
+			var motion_change =  (10 * $RayCast2D/Sprite.position)
+			print(dir)
+			motion_change.x *= dir
+			motion = motion_change
+			print(motion_change)
 			
 		
 		if friction == true:
@@ -91,6 +97,7 @@ func movement(friction):
 			motion.y = MIN_JUMP_HEIGHT
 			pass
 func die():
+	canmove = false
 	var sound = load("res://sounds/sfx/death/Roblox Death Sound - Sound Effect (HD).wav")
 	var die = $particles/die
 	die.emitting = true
