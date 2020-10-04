@@ -27,11 +27,11 @@ position = Vector2( -8192, 0 )
 [node name="chunk3" parent="." instance=ExtResource( 3 )]
 position = Vector2( -4096, 0 )
 
-[node name="chunk4" parent="." instance=ExtResource( 3 )]
+[node name="chunk3b" parent="." instance=ExtResource( 3 )]
 position = Vector2( 8192, 0 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1280, 880 )
+position = Vector2( 568, 1232 )
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2( 9352, 1080 )
