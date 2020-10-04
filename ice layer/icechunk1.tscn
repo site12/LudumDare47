@@ -1,12 +1,16 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://template/chunk1.gd" type="Script" id=1]
 [ext_resource path="res://ice layer/IceCave_TileSet.png" type="Texture" id=2]
 [ext_resource path="res://ice layer/IceTileSet.tres" type="TileSet" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://ice layer/Misc Assets/fog.shader" type="Shader" id=5]
+[ext_resource path="res://Warp.shader" type="Shader" id=6]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 6 )
+
+[sub_resource type="TileSet" id=2]
 0/name = "IceCave_TileSet.png 0"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
@@ -36,7 +40,7 @@
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 5 )
 shader_param/color = Vector3( 0.35, 0.48, 0.95 )
 shader_param/OCTAVES = 4
@@ -291,6 +295,7 @@ position = Vector2( -1024, 0 )
 position = Vector2( 1024, 0 )
 
 [node name="BackTileMap" type="TileMap" parent="."]
+material = SubResource( 1 )
 scale = Vector2( 0.25, 0.25 )
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 512, 512 )
@@ -301,8 +306,9 @@ __meta__ = {
 }
 
 [node name="Spikes" type="TileMap" parent="."]
+material = SubResource( 1 )
 scale = Vector2( 0.25, 0.25 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 512, 512 )
 format = 1
 tile_data = PoolIntArray( 524352, 0, 0, 655372, 1073741825, 0, 655373, 1610612737, 0, 655374, 1073741825, 0, 655379, 1610612736, 0, 655380, 1073741825, 0, 655381, 1073741825, 0, 655382, 1610612737, 0, 655383, 1073741824, 0 )
@@ -311,12 +317,13 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 2 )
+material = SubResource( 3 )
 position = Vector2( 2048, 407.999 )
 scale = Vector2( 42.6667, 27.1667 )
 texture = ExtResource( 4 )
 
 [node name="FrontTileMap" type="TileMap" parent="."]
+material = SubResource( 1 )
 scale = Vector2( 0.25, 0.25 )
 tile_set = SubResource( 17 )
 cell_size = Vector2( 512, 512 )

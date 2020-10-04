@@ -5,8 +5,8 @@ var GRAVITY = 35
 var ACCELERATION = 50
 var FRICTION = 0.5
 const MAX_SPEED = 500
-const JUMP_HEIGHT = -700*1.5
-const MIN_JUMP_HEIGHT = -400*1.5
+const JUMP_HEIGHT = -700*1.8
+const MIN_JUMP_HEIGHT = -400*1.8
 
 
 var motion = Vector2()
@@ -21,7 +21,7 @@ func _physics_process(delta):
 	motion.y += GRAVITY
 	var friction = false
 	movement(friction)
-	#direction()
+	direction()
 	motion = move_and_slide(motion, UP, 5, 4, PI/3)
 #	if position.x > 2560:
 #		position.x -= 3072
@@ -32,7 +32,13 @@ func _physics_process(delta):
 func _process(_delta):
 	pass
 	
-
+func direction():
+	if dir == 1:
+		$RayCast2D.cast_to = Vector2(-256,0)
+		$AnimatedSprite.flip_h = true
+	if dir == -1:
+		$RayCast2D.cast_to = Vector2(256,0)
+		$AnimatedSprite.flip_h = false
 		
 func movement(friction):
 	#left and right
