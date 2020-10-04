@@ -4,13 +4,12 @@
 [ext_resource path="res://ice layer/Misc Assets/Stalagtite.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.67142, 15.5501 )
+extents = Vector2( 20.6716, 69.8855 )
 
 [sub_resource type="RayShape2D" id=2]
-length = 481.646
+length = 1500.0
 
 [node name="Icicle" type="RigidBody2D"]
-position = Vector2( 367.876, 111.994 )
 mode = 1
 mass = 65535.0
 gravity_scale = 70.0
@@ -18,7 +17,7 @@ sleeping = true
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.115, 0.115 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

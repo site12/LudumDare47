@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ice layer/IceTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://ice layer/IceCave_TileSet.png" type="Texture" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://ice layer/Misc Assets/fog.shader" type="Shader" id=4]
+[ext_resource path="res://ice layer/Icicle.tscn" type="PackedScene" id=5]
 
 [sub_resource type="TileSet" id=1]
 0/name = "IceCave_TileSet.png 0"
@@ -62,6 +63,20 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Icicles" type="Node2D" parent="."]
+
+[node name="Icicle" parent="Icicles" instance=ExtResource( 5 )]
+position = Vector2( 709.417, 330.351 )
+
+[node name="Icicle2" parent="Icicles" instance=ExtResource( 5 )]
+position = Vector2( 2499.12, 321.166 )
+
+[node name="Icicle3" parent="Icicles" instance=ExtResource( 5 )]
+position = Vector2( 3263.19, 330.351 )
+
+[node name="Icicle4" parent="Icicles" instance=ExtResource( 5 )]
+position = Vector2( 3775.73, 330.351 )
+
 [node name="FrontTileMap" type="TileMap" parent="."]
 scale = Vector2( 0.25, 0.25 )
 tile_set = ExtResource( 1 )
@@ -74,6 +89,6 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 2 )
-position = Vector2( 2128, 992 )
+position = Vector2( 2128.5, 988.25 )
 scale = Vector2( 45.3333, 21.6667 )
 texture = ExtResource( 3 )
