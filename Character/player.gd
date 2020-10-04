@@ -1,11 +1,12 @@
 extends KinematicBody2D
 
 const UP = Vector2(0, -1)
-var GRAVITY = 20
+var GRAVITY = 30
 var ACCELERATION = 50
-const MAX_SPEED = 200
-const JUMP_HEIGHT = -500
-const MIN_JUMP_HEIGHT = -200
+var FRICTION = 0.5
+const MAX_SPEED = 500
+const JUMP_HEIGHT = -700*1.5
+const MIN_JUMP_HEIGHT = -400*1.5
 
 
 var motion = Vector2()
@@ -19,7 +20,6 @@ onready var camerapos = $camerapos
 func _physics_process(delta):
 	motion.y += GRAVITY
 	var friction = false
-	climb(friction)
 	movement(friction)
 	#direction()
 	motion = move_and_slide(motion, UP, 5, 4, PI/3)
@@ -33,12 +33,6 @@ func _process(_delta):
 	pass
 	
 
-func direction():
-	if dir == -1:
-		camerapos.position.x = 52
-	else:
-		camerapos.position.x = -52
-	print(camerapos)
 		
 func movement(friction):
 	#left and right
@@ -53,34 +47,16 @@ func movement(friction):
 		friction = true
 	
 	#jump
-	if is_on_floor() || grabbing || is_on_wall():
-		if grabbing:
-			grabbing = false
-		jt.start()
+	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
-			jumping = true
 			motion.y = JUMP_HEIGHT
 		if friction == true:
-			motion.x = lerp(motion.x, 0, .2)
-	elif !grabbing:
+			motion.x = lerp(motion.x, 0, FRICTION)
+	else:
 
-		motion.x = lerp(motion.x, 0, .05)
+		motion.x = lerp(motion.x, 0, 0.05)
 		
 		# Variable jump height
 		if Input.is_action_just_released("jump") && motion.y < MIN_JUMP_HEIGHT:
 			motion.y = MIN_JUMP_HEIGHT
 
-func climb(friction):
-	if is_on_wall() && Input.get_action_strength("grab")==1 && !jumping:
-		grabbing = true
-		friction = true
-		motion.y = $Position2D.position.y
-		motion.x = $Position2D.position.x
-	else:
-		grabbing = false
-		GRAVITY = 20
-		friction = false
-
-
-func _on_jump_timer_timeout():
-	jumping = false
