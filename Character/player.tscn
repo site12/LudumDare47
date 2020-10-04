@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Character/anims/Idle/Idle00000.png" type="Texture" id=1]
 [ext_resource path="res://Character/player.gd" type="Script" id=2]
@@ -61,9 +61,10 @@
 [ext_resource path="res://Character/anims/Idle/Idle00023.png" type="Texture" id=59]
 [ext_resource path="res://Character/anims/Idle/Idle00010.png" type="Texture" id=60]
 [ext_resource path="res://reference/2DLight.png" type="Texture" id=61]
+[ext_resource path="res://icon.png" type="Texture" id=62]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 67.243, 127 )
+extents = Vector2( 80, 127 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -73,13 +74,39 @@ animations = [ {
 "speed": 30.0
 } ]
 
+[sub_resource type="Gradient" id=3]
+colors = PoolColorArray( 1, 1, 1, 1, 0.839355, 0.0721321, 0.0721321, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+min_value = 1.0
+max_value = 1.01
+_data = [ Vector2( 0.0143541, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+flag_disable_z = true
+direction = Vector3( 1, 1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 81.35
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
+
 [node name="player" type="KinematicBody2D"]
 collision_layer = 7
 collision_mask = 2147483655
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -5.94601, 17 )
+position = Vector2( 0, 17 )
 shape = SubResource( 1 )
 
 [node name="jump_timer" type="Timer" parent="."]
@@ -102,11 +129,7 @@ position = Vector2( 9.53674e-07, 9.53674e-07 )
 scale = Vector2( 0.5625, 0.5625 )
 frames = SubResource( 2 )
 animation = "idle"
-<<<<<<< Updated upstream
-frame = 44
-=======
-frame = 29
->>>>>>> Stashed changes
+frame = 6
 playing = true
 
 [node name="Light2D" type="Light2D" parent="."]
@@ -116,6 +139,26 @@ energy = 0.22
 shadow_enabled = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 0, 145 )
 enabled = true
 cast_to = Vector2( 256, 0 )
+
+[node name="Sprite" type="Sprite" parent="RayCast2D"]
+position = Vector2( 256, 0 )
+scale = Vector2( 0.333333, 0.333333 )
+texture = ExtResource( 62 )
+
+[node name="particles" type="Node2D" parent="."]
+
+[node name="die" type="Particles2D" parent="particles"]
+emitting = false
+amount = 15
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.12
+fixed_fps = 60
+process_material = SubResource( 7 )
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0, -2 )
 [connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]

@@ -4,7 +4,7 @@ const UP = Vector2(0, -1)
 var GRAVITY = 9.8 *1000
 var ACCELERATION = 100
 var FRICTION = 0.5
-const MAX_SPEED = 1000
+const MAX_SPEED = 700
 const JUMP_HEIGHT = -700*5
 const MIN_JUMP_HEIGHT = -400*1.8
 
@@ -33,7 +33,7 @@ func slide():
 		
 		sliding = true
 		motion.y = $RayCast2D.position.y
-		motion.y += 10
+		motion.y += 70
 		if $RayCast2D.collide_with_bodies:
 			pass
 		
