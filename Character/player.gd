@@ -15,11 +15,19 @@ var jumping = false
 var sliding = true
 var canmove = true
 var dir = 1
+var on_wall = false
+var which_wall = 0
 onready var jt = $jump_timer
 onready var camerapos = $camerapos
 
 
 func _physics_process(delta):
+	on_wall = $Right.is_colliding() || $Left.is_colliding()
+	if $Right.is_colliding():
+		which_wall = -1
+	if $Left.is_colliding():
+		which_wall = 1
+	# print(str(on_wall))
 	motion.y += GRAVITY*delta
 	var friction = false
 	movement(friction)
@@ -27,9 +35,11 @@ func _physics_process(delta):
 	slide(delta)
 	if canmove:	
 		motion = move_and_slide(motion, UP)
+	# print($Left.name + str($Left.is_colliding()))
+	# print($Right.name + str($Right.is_colliding()))
 	
 func slide(delta):
-	if is_on_wall() and Input.is_action_pressed("grab"):
+	if on_wall and Input.is_action_pressed("grab"):
 		
 		# motion.y = 145
 		if motion.y >0:
@@ -74,20 +84,20 @@ func movement(friction):
 		if friction == true:
 			motion.x = lerp(motion.x, 0, FRICTION)
 	
-	elif is_on_wall():
+	elif on_wall:
 		jumping = false
 		if Input.is_action_just_pressed("jump"):
 			jumping = true
 			
-			var motion_change =  (10 * $RayCast2D/Sprite.position)
+			var motion_change =  (10 * Vector2(256,-256))#$RayCast2D/Sprite.position)
 			print(dir)
-			motion_change.x *= dir
+			motion_change.x *= which_wall
 			motion = motion_change
 			print(motion_change)
 			
 		
-		if friction == true:
-			motion.x = lerp(motion.x, 0, FRICTION)
+		# if friction == true:
+		# 	motion.x = lerp(motion.x, 0, FRICTION)
 	else:
 
 		motion.x = lerp(motion.x, 0, 0.05)
