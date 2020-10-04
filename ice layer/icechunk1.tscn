@@ -7,7 +7,6 @@
 [ext_resource path="res://template/chunk1.gd" type="Script" id=5]
 [ext_resource path="res://ice layer/IceCave_TileSet.png" type="Texture" id=6]
 [ext_resource path="res://ice layer/IceCave_TileSet3.png" type="Texture" id=7]
-[ext_resource path="res://Shared Assets/Spikes.gd" type="Script" id=8]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 3 )
@@ -394,48 +393,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Spikes" type="Area2D" parent="FrontTileMap"]
-position = Vector2( 6656, 7008 )
-script = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontTileMap/Spikes"]
-shape = SubResource( 16 )
-
-[node name="Spikes2" type="Area2D" parent="FrontTileMap"]
-position = Vector2( 9472, 8032 )
-script = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontTileMap/Spikes2"]
-position = Vector2( 192, 32 )
-shape = SubResource( 17 )
-
-[node name="Spikes3" type="Area2D" parent="FrontTileMap"]
-position = Vector2( 12032, 8544 )
-script = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontTileMap/Spikes3"]
-position = Vector2( 0, 32 )
-shape = SubResource( 18 )
-
-[node name="Spikes4" type="Area2D" parent="FrontTileMap"]
-position = Vector2( 13888, 7520 )
-script = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontTileMap/Spikes4"]
-position = Vector2( 0, 32 )
-shape = SubResource( 19 )
-
-[node name="Spikes5" type="Area2D" parent="FrontTileMap"]
-position = Vector2( 14912, 7008 )
-script = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontTileMap/Spikes5"]
-position = Vector2( 0, 32 )
-shape = SubResource( 19 )
-
 [node name="IceMap" type="TileMap" parent="."]
 scale = Vector2( 0.25, 0.25 )
 tile_set = SubResource( 15 )
 cell_size = Vector2( 512, 512 )
 format = 1
-tile_data = PoolIntArray( 458752, 0, 0, 458753, -1610612735, 0, 524289, -1610612736, 0, 589825, -1610612736, 0, 655361, -1610612736, 0, 720897, -1610612736, 0, 786433, -1610612736, 0, 786451, 1, 0, 786452, 536870912, 0, 786453, 536870913, 0 )
+tile_data = PoolIntArray( 786451, 1, 0, 786452, 536870912, 0, 786453, 536870913, 0 )
