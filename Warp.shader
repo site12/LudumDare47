@@ -6,7 +6,7 @@ void vertex() {
 	//VERTEX.y += VERTEX.x-512.0;
     // VERTEX.y += VERTEX.x;
     float vx = VERTEX.x;
-    float radius = 2000.0;
+    float radius = 4000.0;
     //VERTEX.y += -0.001*((vx-512.0)*(vx-512.0))+64.0;
     // VERTEX.y += sqrt(10.0 - exp2(vx));
     // VERTEX.y += -sqrt(pow(radius,2.0) - pow(vx,2.0));

@@ -1,18 +1,26 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ice layer/IceTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://ice layer/Misc Assets/fog.shader" type="Shader" id=3]
 [ext_resource path="res://ice layer/Icicle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Warp.shader" type="Shader" id=5]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 5 )
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
 shader_param/color = Vector3( 0.35, 0.48, 0.95 )
 shader_param/OCTAVES = 4
 
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 5 )
+
 [node name="chunk2" type="Node2D"]
 
 [node name="BackTileMap" type="TileMap" parent="."]
+material = SubResource( 3 )
 scale = Vector2( 0.25, 0.25 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 512, 512 )
@@ -44,6 +52,7 @@ scale = Vector2( 1, -1 )
 position = Vector2( 2363.61, 332.354 )
 
 [node name="FrontTileMap" type="TileMap" parent="."]
+material = SubResource( 2 )
 scale = Vector2( 0.25, 0.25 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 512, 512 )

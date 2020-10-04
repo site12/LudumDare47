@@ -6,5 +6,12 @@ func _on_Area2D_body_entered(body):
 	set_deferred('mode', MODE_RIGID)
 	# apply_central_impulse(Vector2(0,-1))
 
+func _on_Icicle_body_entered(body):
+	if body.name == 'player':
+		body.dead()
+	else:
+		#spawn particles
+		queue_free()
+
 func _physics_process(delta):
 	pass
