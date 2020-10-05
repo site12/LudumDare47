@@ -248,4 +248,21 @@ func pass_camera_shake(amount):
 
 func change_zone(zone):
 	current_zone = zone
-	###Shane write some music stuff here
+	if zone == "ice":
+		$audio2/ice.volume_db = 0
+	else:
+		$audio2/ice.volume_db = -80
+	if zone == "cavechunk":
+		$audio2/cavechunk.volume_db = 0
+	else:
+		$audio2/cavechunk.volume_db = -80
+	if zone == "bio":
+		$audio2/bio.volume_db = 0
+	else:
+		$audio2/bio.volume_db = -80
+	if zone == "city":
+		$audio2/city.volume_db = 0
+		$audio2/overview.volume_db = -80
+	else:
+		$audio2/city.volume_db = -80
+		$audio2/overview.volume_db = 0
