@@ -31,8 +31,10 @@ func _input(event):
 		var new_scene = load(scene).instance()
 		root.add_child(new_scene)
 		new_scene.position = root.get_node(point).get_global_position()
-		
-		root.get_node('player').set_deferred('position', root.get_node(to).get_node('DoorHole').global_position)
+		root.get_node('player').current_zone = to
+		if to == 'village':
+			to = 'village/villagechunk2'
+		#root.get_node('player').set_deferred('position', root.get_node(to).get_node('DoorHole').global_position)
 		root.get_node(from).call_deferred('queue_free')
 
 
