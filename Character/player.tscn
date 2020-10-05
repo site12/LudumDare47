@@ -1,4 +1,4 @@
-[gd_scene load_steps=172 format=2]
+[gd_scene load_steps=173 format=2]
 
 [ext_resource path="res://Character/anims/Idle/Idle00000.png" type="Texture" id=1]
 [ext_resource path="res://Character/player.gd" type="Script" id=2]
@@ -97,6 +97,7 @@
 [ext_resource path="res://sounds/music/bio layer.wav" type="AudioStream" id=95]
 [ext_resource path="res://sounds/music/city.wav" type="AudioStream" id=96]
 [ext_resource path="res://sounds/music/cavechunk.wav" type="AudioStream" id=97]
+[ext_resource path="res://sounds/sfx/footstep.wav" type="AudioStream" id=98]
 [ext_resource path="res://land.tscn" type="PackedScene" id=104]
 [ext_resource path="res://Character/anims/Jump/Jump_00017.png" type="Texture" id=105]
 [ext_resource path="res://Character/anims/Jump/Jump_00023.png" type="Texture" id=106]
@@ -365,5 +366,9 @@ autoplay = true
 [node name="overview" type="AudioStreamPlayer2D" parent="audio2"]
 stream = ExtResource( 94 )
 autoplay = true
+
+[node name="footstep" type="AudioStreamPlayer2D" parent="audio2"]
+stream = ExtResource( 98 )
+volume_db = 3.037
 [connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]
 [connection signal="timeout" from="respawn_timer" to="." method="_on_respawn_timer_timeout"]

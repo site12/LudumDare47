@@ -73,49 +73,67 @@ func slide(delta):
 		#GRAVITY = 35
 	
 func direction():
+	
+	
+	
 	if dir == 1 and motion.x == 0:
 		# $RayCast2D.scale.x = -1
 		$AnimatedSprite.flip_h = true
 		if !jumping:
 			$AnimatedSprite.play("idle")
+
 		elif !sliding:
 			$AnimatedSprite.play("jump")
+
 		elif vining:
 			$AnimatedSprite.play("slide")
+
 		else:
 			$AnimatedSprite.play("slide")
+
 
 	elif dir == 1:
 		$AnimatedSprite.flip_h = true
 		if !jumping:
 			$AnimatedSprite.play("run")
+
 		elif !sliding:
 			$AnimatedSprite.play("jump")
+
 		elif vining:
 			$AnimatedSprite.play("slide")
+
 		else:
 			$AnimatedSprite.play("slide")
+
 
 	if dir == -1 and motion.x == 0:
 		# $RayCast2D.scale.x = 1
 		$AnimatedSprite.flip_h = false
 		if !jumping:
 			$AnimatedSprite.play("idle")
+
 		elif !sliding:
 			$AnimatedSprite.play("jump")
+
 		elif vining:
 			$AnimatedSprite.play("slide")
+
 		else:
 			$AnimatedSprite.play("slide")
+
 
 	elif dir == -1:
 		$AnimatedSprite.flip_h = false
 		if !jumping:
 			$AnimatedSprite.play("run")
+
 		elif !sliding:
 			$AnimatedSprite.play("jump")
+
 		elif vining:
 			$AnimatedSprite.play("slide")
+
 		else:
 			$AnimatedSprite.play("slide")
 
@@ -149,16 +167,28 @@ func movement(friction):
 	# 	GRAVITY = 9.8 * 1000
 	if canmove:
 		### Left and right
+		
+		
+		
 		if Input.is_action_pressed("right"):
+			
 			if not on_ice and motion.x < 0 and is_on_floor():
+				
 				motion.x = lerp(motion.x, 0, 0.5)
+				
 			motion.x = min(motion.x+ACCELERATION, MAX_SPEED)
+			
 			dir = -1
+			
 		
 		elif Input.is_action_pressed("left"):
+			
 			if not on_ice and motion.x > 0 and is_on_floor():
+				
 				motion.x = lerp(motion.x, 0, 0.5)
+				
 			motion.x = max(motion.x-ACCELERATION, -MAX_SPEED)
+			
 			dir = 1
 
 		else:
@@ -266,3 +296,4 @@ func change_zone(zone):
 	else:
 		$audio2/city.volume_db = -80
 		$audio2/overview.volume_db = 0
+
