@@ -1,8 +1,9 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://bio layer/misc assets/BioForrestTileMap.png" type="Texture" id=1]
 [ext_resource path="res://bio layer/grosswater.shader" type="Shader" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://bio layer/Vines.gd" type="Script" id=4]
 
 [sub_resource type="TileSet" id=1]
 0/name = "BioForrestTileMap.png 0"
@@ -537,6 +538,26 @@ tile_set = SubResource( 2 )
 cell_size = Vector2( 512, 512 )
 format = 1
 tile_data = PoolIntArray( 131097, 536870912, 0, 131098, 536870912, 0, 196633, 536870912, 0, 196634, 536870912, 0, 262169, 536870912, 0, 262170, 536870912, 0, 327697, 0, 0, 327705, 536870912, 0, 327706, 536870912, 0, 393233, 0, 0, 393241, 536870912, 0, 458768, 536870912, 0, 458769, 0, 0, 524292, 536870912, 0, 524293, 536870912, 0, 524304, 536870912, 0, 524305, 0, 0, 589828, 536870912, 0, 589829, 536870912, 0, 589840, 536870912, 0, 655364, 536870912, 0, 655365, 536870912, 0, 720900, 536870912, 0 )
+
+[node name="Vines" type="Area2D" parent="Vines"]
+script = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Vines/Vines"]
+polygon = PoolVector2Array( 2570.71, 4518.86, 3005.66, 4302.98, 3021.53, 5649.09, 2567.53, 5658.62, 2564.36, 6150.71, 2075.44, 6160.24, 2072.26, 4271.23 )
+
+[node name="Vines2" type="Area2D" parent="Vines"]
+position = Vector2( 6176.71, -1313.87 )
+script = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Vines/Vines2"]
+polygon = PoolVector2Array( 2535.67, 4391.67, 3023.03, 4400.14, 3018.79, 5942.72, 2548.39, 5946.96, 2544.15, 6459.74, 2010.18, 6451.26, 2035.61, 5387.56, 2294.12, 5438.41, 2527.2, 5353.66 )
+
+[node name="Vines3" type="Area2D" parent="Vines"]
+position = Vector2( 10826.4, -2913.23 )
+script = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Vines/Vines3"]
+polygon = PoolVector2Array( 2002.88, 4401.69, 2968.52, 4392.18, 2954.25, 6019.01, 2488.08, 6023.77, 2483.32, 6508.97, 2007.64, 6508.97 )
 
 [node name="Objects" type="TileMap" parent="."]
 scale = Vector2( 0.25, 0.25 )
