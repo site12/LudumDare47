@@ -546,7 +546,7 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 4 )
 
 [node name="Tree2" type="Sprite" parent="."]
-position = Vector2( 3965.4, 1591.51 )
+position = Vector2( 3899.4, 1347.51 )
 rotation = -0.31765
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 5 )
