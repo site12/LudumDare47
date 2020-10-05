@@ -21,6 +21,7 @@ var dir = 1
 var on_wall = false
 var which_wall = 0
 var jump_particle = load("res://land.tscn")
+var current_zone = 'village'
 onready var jt = $jump_timer
 onready var camerapos = $camerapos
 onready var camera = $camerapos/Camera2D
@@ -38,8 +39,8 @@ func _physics_process(delta):
 	movement(friction)
 	direction()
 	slide(delta)
-	if canmove:	
-		motion = move_and_slide(motion, UP)
+		
+	motion = move_and_slide(motion, UP)
 	# print($Left.name + str($Left.is_colliding()))
 	# print($Right.name + str($Right.is_colliding()))
 	
@@ -163,7 +164,7 @@ func movement(friction):
 			friction = true
 	
 	#jump
-	if is_on_floor() || vining:
+	if is_on_floor() and canmove or vining:
 		
 		
 		if Input.is_action_just_pressed("jump"):
@@ -177,7 +178,7 @@ func movement(friction):
 		if friction == true and not on_ice:
 			motion.x = lerp(motion.x, 0, FRICTION)
 	
-	elif on_wall:
+	elif on_wall and canmove:
 		
 		# if on_ice:
 		# 	motion.y += (GRAVITY*0.01)
@@ -234,3 +235,6 @@ func _on_jump_timer_timeout():
 		GRAVITY = 9.8 * 250
 	else:
 		GRAVITY = 9.8 * 1000
+
+func pass_camera_shake(amount):
+	camera.add_trauma(amount)

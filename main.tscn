@@ -15,7 +15,7 @@ script = ExtResource( 5 )
 position = Vector2( 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 7104, 488 )
+position = Vector2( 7136, 368 )
 
 [node name="audio2" type="Node2D" parent="player"]
 script = ExtResource( 8 )
@@ -51,4 +51,7 @@ __meta__ = {
 }
 
 [node name="ice point" type="Position2D" parent="."]
-position = Vector2( 9248, 1152 )
+position = Vector2( 9192, 7168 )
+__meta__ = {
+"_edit_lock_": true
+}

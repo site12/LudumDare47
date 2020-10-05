@@ -415,6 +415,7 @@ __meta__ = {
 }
 [connection signal="focus_entered" from="switch1/switch" to="switch1/switch" method="_on_switch_focus_entered"]
 [connection signal="focus_exited" from="switch1/switch" to="switch1/switch" method="_on_switch_focus_exited"]
+[connection signal="pressed" from="switch1/switch" to="switch1/switch" method="_on_switch_pressed"]
 [connection signal="toggled" from="switch1/switch" to="switch1/switch" method="_on_switch1_toggled"]
 [connection signal="focus_entered" from="switch2/switch2" to="switch2/switch2" method="_on_switch2_focus_entered"]
 [connection signal="focus_exited" from="switch2/switch2" to="switch2/switch2" method="_on_switch2_focus_exited"]

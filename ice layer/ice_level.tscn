@@ -4,7 +4,6 @@
 [ext_resource path="res://ice layer/icechunk2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ice layer/icechunk4.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ice layer/icechunk1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Character/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ice layer/ice_level.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -12,6 +11,9 @@ extents = Vector2( 152, 632 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 96, 288 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 288, 216 )
 
 [node name="ice" type="Node2D"]
 script = ExtResource( 6 )
@@ -57,7 +59,11 @@ shape = SubResource( 2 )
 [node name="spawn_point" type="Position2D" parent="."]
 position = Vector2( 768, 920 )
 
-[node name="player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 816, 1288 )
+[node name="Falling Zone" type="Area2D" parent="."]
+position = Vector2( 840, -880 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Falling Zone"]
+shape = SubResource( 3 )
 [connection signal="body_entered" from="End" to="." method="_on_End_body_entered"]
 [connection signal="body_entered" from="Back" to="." method="_on_Back_body_entered"]
+[connection signal="body_entered" from="Falling Zone" to="." method="_on_Falling_Zone_body_entered"]
