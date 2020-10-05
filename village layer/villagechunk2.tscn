@@ -620,8 +620,8 @@ points = PoolVector2Array( 0, 448, 512, 448, 512, 512, 0, 512 )
 } ]
 18/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=21]
-points = PoolVector2Array( 0, 512, 0, 0, 448, 0, 320, 256, 384, 512, 384, 512 )
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 320, 368 )
 
 [sub_resource type="ConvexPolygonShape2D" id=22]
 points = PoolVector2Array( 0, 0, 448, 0, 320, 256, 384, 512, 0, 512, 0, 512 )

@@ -3,6 +3,7 @@ extends Sprite
 export var scene = "path"
 export var from = 'node name'
 export var to = 'node name'
+export var point = 'pos2d name'
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -27,7 +28,9 @@ func _input(event):
 	if Input.is_action_just_pressed("interact") and in_range:
 		# get_tree().change_scene(scene)
 		var root = get_tree().get_root().get_node('root')
-		root.add_child(load(scene).instance())
+		var new_scene = load(scene).instance()
+		root.add_child(new_scene)
+		new_scene.position = root.get_node(point).get_global_position()
 		
 		root.get_node('player').set_deferred('position', root.get_node(to).get_node('DoorHole').global_position)
 		root.get_node(from).call_deferred('queue_free')
