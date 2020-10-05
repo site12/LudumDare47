@@ -1,6 +1,7 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://bio layer/misc assets/BioForrestTileMap.png" type="Texture" id=1]
+[ext_resource path="res://Shared Assets/Spikes.gd" type="Script" id=2]
 [ext_resource path="res://bio layer/grosswater.shader" type="Shader" id=3]
 [ext_resource path="res://bio layer/misc assets/Tree2.png" type="Texture" id=4]
 [ext_resource path="res://bio layer/misc assets/Tree1.png" type="Texture" id=5]
@@ -101,6 +102,12 @@ shader = ExtResource( 3 )
 shader_param/blue_tint = Color( 0.486275, 0.921569, 0.266667, 1 )
 shader_param/sprite_scale = Vector2( 6.5, 3.5 )
 shader_param/scale_x = 0.67
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 1792, 352 )
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 5024, 352 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( 512, 512, 0, 512, 0, 0, 512, 0 )
@@ -580,6 +587,20 @@ tile_set = SubResource( 37 )
 cell_size = Vector2( 512, 512 )
 format = 1
 tile_data = PoolIntArray( 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0 )
+
+[node name="Spikes" type="Area2D" parent="water3"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water3/Spikes"]
+position = Vector2( 2816, 6684 )
+shape = SubResource( 38 )
+
+[node name="Spikes2" type="Area2D" parent="water3"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water3/Spikes2"]
+position = Vector2( 10528, 7228 )
+shape = SubResource( 39 )
 
 [node name="FrontTileMap" type="TileMap" parent="."]
 scale = Vector2( 0.25, 0.25 )
