@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Character/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ice layer/icechunk2.tscn" type="PackedScene" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://audio.gd" type="Script" id=8]
 [ext_resource path="res://sounds/music/cave_ambience.wav" type="AudioStream" id=9]
 [ext_resource path="res://ice layer/icechunk4.tscn" type="PackedScene" id=10]
+[ext_resource path="res://village layer/villagechunk1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://village layer/cavechunk.tscn" type="PackedScene" id=12]
+[ext_resource path="res://village layer/villagechunk2.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 152, 632 )
@@ -20,47 +23,48 @@ extents = Vector2( 96, 288 )
 [node name="root" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="Level" type="Node2D" parent="."]
+[node name="ice" type="Node2D" parent="."]
+visible = false
 
-[node name="chunk1" parent="Level" instance=ExtResource( 4 )]
+[node name="chunk1" parent="ice" instance=ExtResource( 4 )]
 script = null
 
-[node name="chunk2" parent="Level" instance=ExtResource( 2 )]
+[node name="chunk2" parent="ice" instance=ExtResource( 2 )]
 position = Vector2( 4096, 0 )
 
-[node name="chunk2b" parent="Level" instance=ExtResource( 2 )]
+[node name="chunk2b" parent="ice" instance=ExtResource( 2 )]
 position = Vector2( -12288, 0 )
 
-[node name="chunk3" parent="Level" instance=ExtResource( 3 )]
+[node name="chunk3" parent="ice" instance=ExtResource( 3 )]
 position = Vector2( -8192, 0 )
 
-[node name="chunk4b" parent="Level" instance=ExtResource( 10 )]
+[node name="chunk4b" parent="ice" instance=ExtResource( 10 )]
 position = Vector2( -4096, 0 )
 
-[node name="chunk3f" parent="Level" instance=ExtResource( 3 )]
+[node name="chunk3f" parent="ice" instance=ExtResource( 3 )]
 position = Vector2( 8192, 0 )
 
-[node name="chunk4" parent="Level" instance=ExtResource( 10 )]
+[node name="chunk4" parent="ice" instance=ExtResource( 10 )]
 position = Vector2( 12288, 0 )
 
-[node name="End" type="Area2D" parent="Level"]
+[node name="End" type="Area2D" parent="ice"]
 position = Vector2( 13000, 1992 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/End"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ice/End"]
 position = Vector2( 0, -328 )
 shape = SubResource( 1 )
 
-[node name="Back" type="Area2D" parent="Level"]
+[node name="Back" type="Area2D" parent="ice"]
 position = Vector2( -7808, 1552 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Back"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ice/Back"]
 shape = SubResource( 2 )
 
-[node name="spawn_point" type="Position2D" parent="Level"]
+[node name="spawn_point" type="Position2D" parent="ice"]
 position = Vector2( 768, 920 )
 
 [node name="audio" type="Node2D" parent="."]
@@ -82,7 +86,18 @@ autoplay = true
 stream = ExtResource( 7 )
 autoplay = true
 
+[node name="village" type="Node2D" parent="."]
+position = Vector2( -24000, 0 )
+
+[node name="villagechunk1" parent="village" instance=ExtResource( 11 )]
+
+[node name="villagechunk2" parent="village" instance=ExtResource( 13 )]
+position = Vector2( 4096, 0 )
+
+[node name="villagechunk3" parent="village" instance=ExtResource( 12 )]
+position = Vector2( 9728, 0 )
+
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 768, -240 )
-[connection signal="body_entered" from="Level/End" to="." method="_on_End_body_entered"]
-[connection signal="body_entered" from="Level/Back" to="." method="_on_Back_body_entered"]
+position = Vector2( -22648, 1440 )
+[connection signal="body_entered" from="ice/End" to="." method="_on_End_body_entered"]
+[connection signal="body_entered" from="ice/Back" to="." method="_on_Back_body_entered"]
