@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://outside world/misc assets/EndTileMap.png" type="Texture" id=1]
 [ext_resource path="res://village layer/Misc Assets/RockTownTileSheet.png" type="Texture" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://outside world/misc assets/Tree1.png" type="Texture" id=4]
 [ext_resource path="res://outside world/misc assets/Tree2.png" type="Texture" id=5]
 [ext_resource path="res://outside world/misc assets/Mountain.png" type="Texture" id=6]
+[ext_resource path="res://outside world/misc assets/Hut.png" type="Texture" id=7]
+[ext_resource path="res://outside world/misc assets/Hut2.png" type="Texture" id=8]
+[ext_resource path="res://outside world/misc assets/Hut3.png" type="Texture" id=9]
+[ext_resource path="res://outside world/misc assets/Hut1.png" type="Texture" id=10]
 
 [sub_resource type="TileSet" id=6]
 0/name = "RockTownTileSheet.png 0"
@@ -142,6 +146,26 @@ texture = ExtResource( 4 )
 position = Vector2( 536, 1696 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 5 )
+
+[node name="Hut1" type="Sprite" parent="."]
+position = Vector2( 2533.06, 1807.34 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 10 )
+
+[node name="Hut2" type="Sprite" parent="."]
+position = Vector2( 2974.59, 1839.78 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 8 )
+
+[node name="Hut3" type="Sprite" parent="."]
+position = Vector2( 4240.88, 2022.08 )
+scale = Vector2( 0.37, 0.35 )
+texture = ExtResource( 9 )
+
+[node name="Hut" type="Sprite" parent="."]
+position = Vector2( 3574.79, 1891.27 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 7 )
 
 [node name="GrassAndRocks" type="TileMap" parent="."]
 scale = Vector2( 0.25, 0.25 )
