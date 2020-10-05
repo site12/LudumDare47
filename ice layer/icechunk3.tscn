@@ -131,9 +131,6 @@ position = Vector2( 1472, 192 )
 [node name="Icicle Spawner2" parent="Icicles" instance=ExtResource( 5 )]
 position = Vector2( 1600, 200 )
 
-[node name="Icicle Spawner3" parent="Icicles" instance=ExtResource( 5 )]
-position = Vector2( 2624, 64 )
-
 [node name="Icicle Spawner4" parent="Icicles" instance=ExtResource( 5 )]
 position = Vector2( 3136, 64 )
 

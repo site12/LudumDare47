@@ -187,7 +187,7 @@ func movement(friction):
 			# GRAVITY = 9.8 * 500
 			# $jump_timer.start()
 			# $particles/wall_jump.emitting = true
-			var motion_change =  (5 * Vector2(256,-256))#$RayCast2D/Sprite.position)
+			var motion_change =  (6 * Vector2(256,-256))#$RayCast2D/Sprite.position)
 			print(dir)
 			motion_change.x *= which_wall
 			var new_jump_particle = jump_particle.instance()
@@ -225,7 +225,7 @@ func die():
 
 func _on_respawn_timer_timeout():
 	#Respawning
-	set_deferred('position', get_parent().get_node('ice/spawn_point').get_global_transform().get_origin())
+	set_deferred('position', get_parent().get_node('spawn_point').get_global_transform().get_origin())
 	canmove = true
 	$AnimatedSprite.rotation = 0
 
