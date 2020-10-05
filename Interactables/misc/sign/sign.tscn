@@ -61,10 +61,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0, 0 ]
+"values": [ 0 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("ColorRect:modulate")
@@ -124,7 +124,7 @@ texture = ExtResource( 2 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, -160 )
+position = Vector2( 0, -192 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -137,7 +137,7 @@ margin_top = -1500.0
 margin_right = 608.0
 margin_bottom = -955.996
 rect_min_size = Vector2( 1216, 544 )
-color = Color( 0, 0, 0, 0.384314 )
+color = Color( 0.309804, 0.309804, 0.309804, 0.372549 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -160,5 +160,7 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="ColorRect/Label"]
-wait_time = 0.2
+wait_time = 0.025
+[connection signal="body_entered" from="Area2D" to="ColorRect/Label" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="ColorRect/Label" method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="ColorRect/Label/Timer" to="ColorRect/Label" method="_on_Timer_timeout"]
