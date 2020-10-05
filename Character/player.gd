@@ -9,6 +9,7 @@ const JUMP_HEIGHT = -1500 *1.4
 const MIN_JUMP_HEIGHT = -500*2
 
 
+onready var jcast = $jumpcast
 var motion = Vector2()
 var grabbing = false
 var jumping = false
@@ -18,6 +19,7 @@ var on_ice = false
 var dir = 1
 var on_wall = false
 var which_wall = 0
+var jump_particle = load("res://land.tscn")
 onready var jt = $jump_timer
 onready var camerapos = $camerapos
 
@@ -59,19 +61,42 @@ func direction():
 	if dir == 1 and motion.x == 0:
 		# $RayCast2D.scale.x = -1
 		$AnimatedSprite.flip_h = true
-		$AnimatedSprite.play("idle")
+		if !jumping:
+			$AnimatedSprite.play("idle")
+		else:
+			$AnimatedSprite.play("jump")
 	elif dir == 1:
 		$AnimatedSprite.flip_h = true
-		$AnimatedSprite.play("run")
+		if !jumping:
+			$AnimatedSprite.play("run")
+		else:
+			$AnimatedSprite.play("jump")
 	if dir == -1 and motion.x == 0:
 		# $RayCast2D.scale.x = 1
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("idle")
 	elif dir == -1:
 		$AnimatedSprite.flip_h = false
-		$AnimatedSprite.play("run")
+		if !jumping:
+			$AnimatedSprite.play("run")
+		else:
+			$AnimatedSprite.play("jump")
 		
 func movement(friction):
+
+
+
+	if is_on_floor():
+		#print("jumping")
+		jumping = false
+		pass
+	else:
+		jumping = true
+	
+		
+
+	#print(str(jcast.get_collision_point())+"    "+str(jcast.global_position))
+
 	if Input.is_action_just_released("jump") and motion.y < 0:
 		### Better Variable Jump Level
 		motion.y = lerp(motion.y, 0, 0.5)
@@ -99,25 +124,24 @@ func movement(friction):
 	#jump
 	if is_on_floor():
 		
-		jumping = false
+		
 		if Input.is_action_just_pressed("jump"):
-			print("jumping = " + str(jumping))
+			
 			# GRAVITY = 9.8 * 500
 			# $jump_timer.start()
 			motion.y += JUMP_HEIGHT
-			jumping = true
 		if friction == true and not on_ice:
 			motion.x = lerp(motion.x, 0, FRICTION)
 	
 	elif on_wall:
-		jumping = false
+		
 		# if on_ice:
 		# 	motion.y += (GRAVITY*0.01)
 		if Input.is_action_just_pressed("jump") and not on_ice:
-			print("jumping = " + str(jumping))
+
+
 			# GRAVITY = 9.8 * 500
 			# $jump_timer.start()
-			jumping = true
 			
 			var motion_change =  (5 * Vector2(256,-256))#$RayCast2D/Sprite.position)
 			print(dir)
@@ -129,8 +153,6 @@ func movement(friction):
 		# if friction == true:
 		# 	motion.x = lerp(motion.x, 0, FRICTION)
 	else:
-		jumping = true
-		print("jumping = " + str(jumping))
 		###  air friction?
 		# motion.x = lerp(motion.x, 0, 0.05)
 		pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=2]
+[gd_scene load_steps=147 format=2]
 
 [ext_resource path="res://Character/anims/Idle/Idle00000.png" type="Texture" id=1]
 [ext_resource path="res://Character/player.gd" type="Script" id=2]
@@ -103,6 +103,37 @@
 [ext_resource path="res://Character/anims/Run/Run_00038.png" type="Texture" id=101]
 [ext_resource path="res://Character/anims/Run/Run_00040.png" type="Texture" id=102]
 [ext_resource path="res://Character/anims/Run/Run_00041.png" type="Texture" id=103]
+[ext_resource path="res://land.tscn" type="PackedScene" id=104]
+[ext_resource path="res://Character/anims/Jump/Jump_00017.png" type="Texture" id=105]
+[ext_resource path="res://Character/anims/Jump/Jump_00023.png" type="Texture" id=106]
+[ext_resource path="res://Character/anims/Jump/Jump_00000.png" type="Texture" id=107]
+[ext_resource path="res://Character/anims/Jump/Jump_00026.png" type="Texture" id=108]
+[ext_resource path="res://Character/anims/Jump/Jump_00028.png" type="Texture" id=109]
+[ext_resource path="res://Character/anims/Jump/Jump_00004.png" type="Texture" id=110]
+[ext_resource path="res://Character/anims/Jump/Jump_00001.png" type="Texture" id=111]
+[ext_resource path="res://Character/anims/Jump/Jump_00027.png" type="Texture" id=112]
+[ext_resource path="res://Character/anims/Jump/Jump_00029.png" type="Texture" id=113]
+[ext_resource path="res://Character/anims/Jump/Jump_00010.png" type="Texture" id=114]
+[ext_resource path="res://Character/anims/Jump/Jump_00006.png" type="Texture" id=115]
+[ext_resource path="res://Character/anims/Jump/Jump_00011.png" type="Texture" id=116]
+[ext_resource path="res://Character/anims/Jump/Jump_00003.png" type="Texture" id=117]
+[ext_resource path="res://Character/anims/Jump/Jump_00019.png" type="Texture" id=118]
+[ext_resource path="res://Character/anims/Jump/Jump_00012.png" type="Texture" id=119]
+[ext_resource path="res://Character/anims/Jump/Jump_00020.png" type="Texture" id=120]
+[ext_resource path="res://Character/anims/Jump/Jump_00024.png" type="Texture" id=121]
+[ext_resource path="res://Character/anims/Jump/Jump_00021.png" type="Texture" id=122]
+[ext_resource path="res://Character/anims/Jump/Jump_00009.png" type="Texture" id=123]
+[ext_resource path="res://Character/anims/Jump/Jump_00018.png" type="Texture" id=124]
+[ext_resource path="res://Character/anims/Jump/Jump_00013.png" type="Texture" id=125]
+[ext_resource path="res://Character/anims/Jump/Jump_00005.png" type="Texture" id=126]
+[ext_resource path="res://Character/anims/Jump/Jump_00002.png" type="Texture" id=127]
+[ext_resource path="res://Character/anims/Jump/Jump_00007.png" type="Texture" id=128]
+[ext_resource path="res://Character/anims/Jump/Jump_00008.png" type="Texture" id=129]
+[ext_resource path="res://Character/anims/Jump/Jump_00022.png" type="Texture" id=130]
+[ext_resource path="res://Character/anims/Jump/Jump_00014.png" type="Texture" id=131]
+[ext_resource path="res://Character/anims/Jump/Jump_00025.png" type="Texture" id=132]
+[ext_resource path="res://Character/anims/Jump/Jump_00016.png" type="Texture" id=133]
+[ext_resource path="res://Character/anims/Jump/Jump_00015.png" type="Texture" id=134]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34.4624, 78.5083 )
@@ -118,6 +149,11 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 60.0
+}, {
+"frames": [ ExtResource( 107 ), ExtResource( 111 ), ExtResource( 127 ), ExtResource( 117 ), ExtResource( 110 ), ExtResource( 126 ), ExtResource( 115 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 123 ), ExtResource( 114 ), ExtResource( 116 ), ExtResource( 119 ), ExtResource( 125 ), ExtResource( 131 ), ExtResource( 134 ), ExtResource( 133 ), ExtResource( 105 ), ExtResource( 124 ), ExtResource( 118 ), ExtResource( 120 ), ExtResource( 122 ), ExtResource( 130 ), ExtResource( 106 ), ExtResource( 121 ), ExtResource( 132 ), ExtResource( 108 ), ExtResource( 112 ), ExtResource( 109 ), ExtResource( 113 ) ],
+"loop": false,
+"name": "jump",
+"speed": 30.0
 } ]
 
 [sub_resource type="Gradient" id=3]
@@ -169,16 +205,6 @@ orbit_velocity_random = 0.0
 scale_curve = SubResource( 11 )
 color_ramp = SubResource( 9 )
 
-[sub_resource type="ParticlesMaterial" id=13]
-flag_disable_z = true
-direction = Vector3( 1, 1, 0 )
-gravity = Vector3( 0, 98, 0 )
-initial_velocity = 62.5
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale_curve = SubResource( 11 )
-color_ramp = SubResource( 9 )
-
 [node name="player" type="KinematicBody2D"]
 collision_layer = 7
 collision_mask = 2147483655
@@ -207,8 +233,8 @@ offset_v = -1.0
 position = Vector2( 9.53674e-07, 9.53674e-07 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 2 )
-animation = "run"
-frame = 38
+animation = "jump"
+frame = 29
 playing = true
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
@@ -247,14 +273,7 @@ one_shot = true
 speed_scale = 5.0
 process_material = SubResource( 12 )
 
-[node name="land" type="Particles2D" parent="particles"]
-position = Vector2( 0, 90 )
-scale = Vector2( -1, -1 )
-emitting = false
-amount = 5
-one_shot = true
-speed_scale = 5.0
-process_material = SubResource( 13 )
+[node name="land" parent="particles" instance=ExtResource( 104 )]
 
 [node name="audio" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 0, -2 )
@@ -281,5 +300,10 @@ cast_to = Vector2( 70, 0 )
 
 [node name="respawn_timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="jumpcast" type="RayCast2D" parent="."]
+position = Vector2( 0, 88.77 )
+enabled = true
+cast_to = Vector2( 0, 1024 )
 [connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]
 [connection signal="timeout" from="respawn_timer" to="." method="_on_respawn_timer_timeout"]
