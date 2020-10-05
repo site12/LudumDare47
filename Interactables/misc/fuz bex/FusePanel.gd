@@ -20,6 +20,7 @@ func _input(event):
 		panel = !panel
 		if panel:
 			if player:
+				player.motion.x = 0
 				player.canmove = false
 			get_parent().get_node("CanvasLayer/fusebox").interacting = true
 			get_parent().get_node("CanvasLayer/fusebox/AnimationPlayer").play("fade")
