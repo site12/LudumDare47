@@ -9,7 +9,7 @@
 [ext_resource path="res://ice layer/ice.gd" type="Script" id=7]
 [ext_resource path="res://Shared Assets/Spikes.gd" type="Script" id=8]
 
-[sub_resource type="TileSet" id=2]
+[sub_resource type="TileSet" id=1]
 0/name = "IceCave_TileSet3.png 0"
 0/texture = ExtResource( 5 )
 0/tex_offset = Vector2( 0, 0 )
@@ -39,13 +39,13 @@
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="ShaderMaterial" id=6]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 3 )
 shader_param/color = Vector3( 0.95, 0.95, 0.95 )
 shader_param/OCTAVES = 4
 shader_param/opacity = 0.25
 
-[sub_resource type="TileSet" id=20]
+[sub_resource type="TileSet" id=3]
 0/name = "IceCave_TileSet3.png 0"
 0/texture = ExtResource( 5 )
 0/tex_offset = Vector2( 0, 0 )
@@ -75,7 +75,7 @@ shader_param/opacity = 0.25
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 1152, 608 )
 
 [node name="chunk2" type="Node2D"]
@@ -90,17 +90,17 @@ tile_data = PoolIntArray( 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65
 [node name="Icicles" type="Node2D" parent="."]
 
 [node name="Icicle Spawner" parent="Icicles" instance=ExtResource( 4 )]
-position = Vector2( 560, 400 )
+position = Vector2( 584, 448 )
 
 [node name="Icicle Spawner2" parent="Icicles" instance=ExtResource( 4 )]
-position = Vector2( 1328, 272 )
+position = Vector2( 1224, 448 )
 
 [node name="Icicle Spawner3" parent="Icicles" instance=ExtResource( 4 )]
-position = Vector2( 2496, 328 )
+position = Vector2( 1480, 192 )
 
 [node name="Spikes" type="TileMap" parent="."]
 scale = Vector2( 0.25, 0.25 )
-tile_set = SubResource( 2 )
+tile_set = SubResource( 1 )
 cell_size = Vector2( 512, 512 )
 format = 1
 tile_data = PoolIntArray( 458774, 1610612737, 0, 458775, 1610612736, 0, 851970, 1073741824, 0, 851971, 1073741825, 0, 851979, 1610612737, 0, 917507, 1, 0, 917508, 1073741825, 0, 917513, 1610612737, 0, 917514, 1073741824, 0, 917515, 536870913, 0, 983044, 1, 0, 983045, 1073741824, 0, 983046, 1073741824, 0, 983047, 1073741824, 0, 983048, 1073741824, 0, 983049, 536870913, 0, 1048598, 1610612736, 0, 1048599, 1073741824, 0, 1048600, 1073741824, 0, 1048601, 1073741824, 0, 1048602, 1610612736, 0, 1048603, 1610612736, 0 )
@@ -131,7 +131,7 @@ scale = Vector2( 7.96875, 0.9375 )
 polygon = PoolVector2Array( 11264, 4096, 11648, 3584, 12288, 3584, 12288, 4096 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 6 )
+material = SubResource( 2 )
 position = Vector2( 2048, 1136 )
 scale = Vector2( 42.6667, 33.0209 )
 texture = ExtResource( 2 )
@@ -151,7 +151,7 @@ texture = ExtResource( 6 )
 
 [node name="IceMap" type="TileMap" parent="."]
 scale = Vector2( 0.25, 0.25 )
-tile_set = SubResource( 20 )
+tile_set = SubResource( 3 )
 cell_size = Vector2( 512, 512 )
 format = 1
 tile_data = PoolIntArray( 786437, 1, 0, 786438, 536870912, 0, 786439, 536870912, 0, 786440, 536870913, 0 )
@@ -161,4 +161,4 @@ position = Vector2( 3616, 6624 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IceMap/ice"]
-shape = SubResource( 21 )
+shape = SubResource( 4 )

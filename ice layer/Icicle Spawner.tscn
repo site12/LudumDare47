@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ice layer/Icicle Spawner.gd" type="Script" id=1]
-[ext_resource path="res://ice layer/Misc Assets/Stalagtite.png" type="Texture" id=2]
+[ext_resource path="res://ice layer/Misc Assets/New_Icicle_wii.png" type="Texture" id=2]
 [ext_resource path="res://Warp.shader" type="Shader" id=3]
 
 [sub_resource type="RayShape2D" id=1]
@@ -25,7 +25,7 @@ shape = SubResource( 1 )
 
 [node name="icicle_sprite" type="Sprite" parent="."]
 material = SubResource( 2 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 [connection signal="timeout" from="icicle_timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
