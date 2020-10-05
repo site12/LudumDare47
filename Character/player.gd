@@ -43,7 +43,7 @@ func _physics_process(delta):
 	
 func slide(delta):
 	if on_wall and Input.is_action_pressed("grab"):
-		
+		sliding = true
 		# motion.y = 145
 		if motion.y >0:
 			motion.y += (-GRAVITY+1000)*delta
@@ -63,27 +63,39 @@ func direction():
 		$AnimatedSprite.flip_h = true
 		if !jumping:
 			$AnimatedSprite.play("idle")
-		else:
+		elif !sliding:
 			$AnimatedSprite.play("jump")
+		else:
+			$AnimatedSprite.play("slide")
+
 	elif dir == 1:
 		$AnimatedSprite.flip_h = true
 		if !jumping:
 			$AnimatedSprite.play("run")
-		else:
+		elif !sliding:
 			$AnimatedSprite.play("jump")
+		else:
+			$AnimatedSprite.play("slide")
+
 	if dir == -1 and motion.x == 0:
 		# $RayCast2D.scale.x = 1
 		$AnimatedSprite.flip_h = false
 		if !jumping:
 			$AnimatedSprite.play("idle")
-		else:
+		elif !sliding:
 			$AnimatedSprite.play("jump")
+		else:
+			$AnimatedSprite.play("slide")
+
 	elif dir == -1:
 		$AnimatedSprite.flip_h = false
 		if !jumping:
 			$AnimatedSprite.play("run")
-		else:
+		elif !sliding:
 			$AnimatedSprite.play("jump")
+		else:
+			$AnimatedSprite.play("slide")
+			
 		
 func movement(friction):
 
