@@ -10,6 +10,6 @@ func _on_Bounce_body_entered(body):
 		root.add_child(city)
 		root.get_node('Bio').call_deferred('queue_free')
 		body.motion = Vector2(200, -6000)
-		body.change_zone('bio')
+		body.change_zone('city')
 		
 		

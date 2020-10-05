@@ -11,3 +11,6 @@ script = ExtResource( 4 )
 position = Vector2( 4096, 0 )
 
 [node name="citychunk1" parent="." instance=ExtResource( 2 )]
+
+[node name="spawn_point" type="Position2D" parent="."]
+position = Vector2( 648, 3064 )

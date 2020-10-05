@@ -265,7 +265,7 @@ func _on_respawn_timer_timeout():
 		'bio':
 			set_deferred('position', root.get_node('bio/spawn_point').get_global_transform().get_origin())	
 		'city':
-			set_deferred('position', get_parent().get_node('spawn_point').get_global_transform().get_origin())
+			set_deferred('position', root.get_node('city/spawn_point').get_global_transform().get_origin())
 	canmove = true
 	$AnimatedSprite.rotation = 0
 
