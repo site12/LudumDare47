@@ -620,7 +620,7 @@ points = PoolVector2Array( 0, 448, 512, 448, 512, 512, 0, 512 )
 } ]
 18/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=33]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 320, 368 )
 
 [sub_resource type="ConvexPolygonShape2D" id=22]
@@ -1026,12 +1026,13 @@ script = ExtResource( 8 )
 scene = "res://village layer/cavechunk.tscn"
 from = "village"
 to = "cavechunk"
+point = "cavechunk point"
 
 [node name="Area2D" type="Area2D" parent="DoorHole2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHole2/Area2D"]
 position = Vector2( -4, -44 )
-shape = SubResource( 33 )
+shape = SubResource( 21 )
 
 [node name="sign" parent="." instance=ExtResource( 9 )]
 position = Vector2( 2904, 1537 )

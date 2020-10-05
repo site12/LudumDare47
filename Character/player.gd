@@ -58,7 +58,7 @@ func slide(delta):
 		sliding = true
 		# motion.y = 145
 		if motion.y >0:
-			motion.y += (-GRAVITY+1000)*delta
+			motion.y += (-GRAVITY+200)*delta
 		# if !jumping:
 		# 	motion.y += 70
 			

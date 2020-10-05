@@ -35,3 +35,8 @@ autoplay = true
 [node name="ice_layer" type="AudioStreamPlayer2D" parent="player/audio2"]
 stream = ExtResource( 7 )
 autoplay = true
+
+[node name="cavechunk point" type="Position2D" parent="."]
+position = Vector2( 6760, -768 )
+
+[node name="village point" type="Position2D" parent="."]
