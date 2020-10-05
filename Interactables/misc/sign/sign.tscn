@@ -1,0 +1,160 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Interactables/misc/sign/text.gd" type="Script" id=1]
+[ext_resource path="res://Interactables/misc/sign/Untitled.png" type="Texture" id=2]
+[ext_resource path="res://fonts/GABRWFFR.TTF" type="DynamicFontData" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 160, 160 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "highlight"
+tracks/0/type = "value"
+tracks/0/path = NodePath("outline2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("outline:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("ColorRect:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -608, -0.25, 0, 0.25, 0, -608, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("ColorRect:rect_position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -1500, -0.25, 0, 0.201052, 157.167, -1200.18, -0.25, 0, 0.0549222, -151.574 ),
+"times": PoolRealArray( 0, 0.2 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect/Label:visible_characters")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ColorRect:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 72
+font_data = ExtResource( 3 )
+
+[node name="sign" type="Node2D"]
+
+[node name="outline2" type="Polygon2D" parent="."]
+position = Vector2( -8, 7.99999 )
+scale = Vector2( 5, 2.75 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, -16, 0, -64, 8, -64, 8, 0 )
+
+[node name="pole" type="Polygon2D" parent="."]
+scale = Vector2( 3, 3.125 )
+color = Color( 0.298039, 0.231373, 0.0745098, 1 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, -16, 0, -64, 8, -64, 8, 0 )
+
+[node name="outline" type="Polygon2D" parent="."]
+position = Vector2( -80, -160 )
+rotation = 0.101229
+scale = Vector2( 22, 1.5 )
+polygon = PoolVector2Array( 3.63636, 0, 3.63636, -5.33334, 4.72727, -5.33334, 4.72727, 0, 8, 0, 8, -64, 0, -64, 0, 0 )
+
+[node name="top" type="Polygon2D" parent="."]
+position = Vector2( -72, -168 )
+rotation = 0.101229
+scale = Vector2( 20, 1.25 )
+color = Color( 0.4, 0.247059, 0.0509804, 1 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, -16, 0, -64, 8, -64, 8, 0 )
+
+[node name="top2" type="Polygon2D" parent="top"]
+position = Vector2( 0.4, -6.40001 )
+scale = Vector2( 0.9, 0.8 )
+color = Color( 0.564706, 0.368627, 0.109804, 1 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, -16, 0, -64, 8, -64, 8, 0 )
+
+[node name="Untitled" type="Sprite" parent="top/top2"]
+position = Vector2( 4, -32 )
+scale = Vector2( 0.0114943, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -160 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/highlight = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -608.0
+margin_top = -1200.18
+margin_right = 608.0
+margin_bottom = -656.176
+rect_min_size = Vector2( 1216, 544 )
+color = Color( 0, 0, 0, 0.384314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -32.0
+custom_fonts/font = SubResource( 3 )
+text = "Do Not Enter! For the safety of all of our citizens, the power station has been deemed off-limits by order of the city council."
+autowrap = true
+clip_text = true
+percent_visible = 0.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="ColorRect/Label"]
+wait_time = 0.2
+[connection signal="timeout" from="ColorRect/Label/Timer" to="ColorRect/Label" method="_on_Timer_timeout"]
