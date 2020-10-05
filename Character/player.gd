@@ -22,6 +22,8 @@ var on_wall = false
 var which_wall = 0
 var jump_particle = load("res://land.tscn")
 var current_zone = 'village'
+var has_pick = false
+var has_machete = false
 onready var jt = $jump_timer
 onready var camerapos = $camerapos
 onready var camera = $camerapos/Camera2D
@@ -73,49 +75,67 @@ func slide(delta):
 		#GRAVITY = 35
 	
 func direction():
+	
+	
+	
 	if dir == 1 and motion.x == 0:
 		# $RayCast2D.scale.x = -1
 		$AnimatedSprite.flip_h = true
 		if !jumping:
 			$AnimatedSprite.play("idle")
+
 		elif !sliding:
 			$AnimatedSprite.play("jump")
+
 		elif vining:
 			$AnimatedSprite.play("slide")
+
 		else:
 			$AnimatedSprite.play("slide")
+
 
 	elif dir == 1:
 		$AnimatedSprite.flip_h = true
 		if !jumping:
 			$AnimatedSprite.play("run")
+
 		elif !sliding:
 			$AnimatedSprite.play("jump")
+
 		elif vining:
 			$AnimatedSprite.play("slide")
+
 		else:
 			$AnimatedSprite.play("slide")
+
 
 	if dir == -1 and motion.x == 0:
 		# $RayCast2D.scale.x = 1
 		$AnimatedSprite.flip_h = false
 		if !jumping:
 			$AnimatedSprite.play("idle")
+
 		elif !sliding:
 			$AnimatedSprite.play("jump")
+
 		elif vining:
 			$AnimatedSprite.play("slide")
+
 		else:
 			$AnimatedSprite.play("slide")
+
 
 	elif dir == -1:
 		$AnimatedSprite.flip_h = false
 		if !jumping:
 			$AnimatedSprite.play("run")
+
 		elif !sliding:
 			$AnimatedSprite.play("jump")
+
 		elif vining:
 			$AnimatedSprite.play("slide")
+
 		else:
 			$AnimatedSprite.play("slide")
 
@@ -149,16 +169,28 @@ func movement(friction):
 	# 	GRAVITY = 9.8 * 1000
 	if canmove:
 		### Left and right
+		
+		
+		
 		if Input.is_action_pressed("right"):
+			
 			if not on_ice and motion.x < 0 and is_on_floor():
+				
 				motion.x = lerp(motion.x, 0, 0.5)
+				
 			motion.x = min(motion.x+ACCELERATION, MAX_SPEED)
+			
 			dir = -1
+			
 		
 		elif Input.is_action_pressed("left"):
+			
 			if not on_ice and motion.x > 0 and is_on_floor():
+				
 				motion.x = lerp(motion.x, 0, 0.5)
+				
 			motion.x = max(motion.x-ACCELERATION, -MAX_SPEED)
+			
 			dir = 1
 
 		else:
@@ -231,7 +263,7 @@ func _on_respawn_timer_timeout():
 		'ice':
 			set_deferred('position', root.get_node('ice/spawn_point').get_global_transform().get_origin())
 		'bio':
-			set_deferred('position', get_parent().get_node('spawn_point').get_global_transform().get_origin())	
+			set_deferred('position', root.get_node('bio/spawn_point').get_global_transform().get_origin())	
 		'city':
 			set_deferred('position', get_parent().get_node('spawn_point').get_global_transform().get_origin())
 	canmove = true
@@ -266,3 +298,12 @@ func change_zone(zone):
 	else:
 		$audio2/city.volume_db = -80
 		$audio2/overview.volume_db = 0
+	###Shane write some music stuff here
+
+func got_pick():
+	has_pick = true
+
+func got_machete():
+	has_machete = true
+	
+

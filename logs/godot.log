@@ -1,3 +1,7 @@
 Godot Engine v3.2.3.stable.official - https://godotengine.org
 OpenGL ES 3.0 Renderer: AMD Radeon RX 5700 XT
  
+**WARNING**: Case mismatch opening requested file 'Ice.gd', stored as 'ice.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   At: drivers/windows/file_access_windows.cpp:105:_open() - Case mismatch opening requested file 'Ice.gd', stored as 'ice.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+**ERROR**: Node not found: root.
+   At: scene/main/node.cpp:1381:get_node() - Condition "!node" is true. Returned: __null

@@ -114,7 +114,6 @@ wait_time = 0.025
 anims/highlight = SubResource( 3 )
 
 [node name="outline" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -0.858398, -3.38721 )
 texture = ExtResource( 4 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
