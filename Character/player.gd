@@ -22,6 +22,7 @@ var on_wall = false
 var which_wall = 0
 var jump_particle = load("res://land.tscn")
 var current_zone = 'village'
+var has_pick = true
 onready var jt = $jump_timer
 onready var camerapos = $camerapos
 onready var camera = $camerapos/Camera2D
@@ -249,3 +250,6 @@ func pass_camera_shake(amount):
 func change_zone(zone):
 	current_zone = zone
 	###Shane write some music stuff here
+
+func got_pick():
+	has_pick = true
