@@ -249,7 +249,7 @@ func movement(friction):
 		# 	pass
 func die():
 	canmove = false
-	var sound = load("res://sounds/sfx/death/Roblox Death Sound - Sound Effect (HD).wav")
+	var sound = load("res://sounds/sfx/death/die.wav")
 	var die = $particles/die
 	die.emitting = true
 	$AnimatedSprite.rotation = 90
