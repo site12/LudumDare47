@@ -9,7 +9,6 @@ const JUMP_HEIGHT = -1500 *1.4
 const MIN_JUMP_HEIGHT = -500*2
 
 
-onready var jcast = $jumpcast
 var motion = Vector2()
 var grabbing = false
 var jumping = false
@@ -123,6 +122,10 @@ func movement(friction):
 
 
 	if is_on_floor():
+		if jumping:
+			var new_jump_particle = jump_particle.instance()
+			get_parent().add_child(new_jump_particle)
+			new_jump_particle.position = $jump_position.get_global_position()
 		#print("jumping")
 		jumping = false
 		pass
@@ -166,6 +169,9 @@ func movement(friction):
 			# GRAVITY = 9.8 * 500
 			# $jump_timer.s tart()
 			motion.y += JUMP_HEIGHT
+			var new_jump_particle = jump_particle.instance()
+			get_parent().add_child(new_jump_particle)
+			new_jump_particle.position = $jump_position.get_global_position()
 		if friction == true and not on_ice:
 			motion.x = lerp(motion.x, 0, FRICTION)
 	
@@ -178,10 +184,18 @@ func movement(friction):
 
 			# GRAVITY = 9.8 * 500
 			# $jump_timer.start()
-			
+			# $particles/wall_jump.emitting = true
 			var motion_change =  (5 * Vector2(256,-256))#$RayCast2D/Sprite.position)
 			print(dir)
 			motion_change.x *= which_wall
+			var new_jump_particle = jump_particle.instance()
+			get_parent().add_child(new_jump_particle)
+			match which_wall:
+				-1:
+					new_jump_particle.position = $right_wall_jump_position.get_global_position()
+				1:
+					new_jump_particle.position = $left_wall_jump_position.get_global_position()
+
 			motion = motion_change
 			print(motion_change)
 			
