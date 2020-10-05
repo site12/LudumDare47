@@ -41,7 +41,7 @@ position = Vector2( -4096, 0 )
 position = Vector2( 8192, 0 )
 
 [node name="chunk4" parent="Level" instance=ExtResource( 10 )]
-position = Vector2( 12288, 0 )
+position = Vector2( 12288, -8 )
 
 [node name="End" type="Area2D" parent="Level"]
 position = Vector2( 13000, 1992 )
@@ -64,7 +64,7 @@ shape = SubResource( 2 )
 position = Vector2( 768, 920 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 768, -272 )
+position = Vector2( 768, 920 )
 
 [node name="audio" type="Node2D" parent="."]
 script = ExtResource( 8 )
