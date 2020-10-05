@@ -40,16 +40,16 @@
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1344, 352 )
 
-[sub_resource type="ShaderMaterial" id=6]
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 4 )
 shader_param/color = Vector3( 0.95, 0.95, 0.95 )
 shader_param/OCTAVES = 4
 shader_param/opacity = 0.25
 
-[sub_resource type="TileSet" id=20]
+[sub_resource type="TileSet" id=4]
 0/name = "IceCave_TileSet3.png 0"
 0/texture = ExtResource( 6 )
 0/tex_offset = Vector2( 0, 0 )
@@ -79,7 +79,7 @@ shader_param/opacity = 0.25
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 384, 1888 )
 
 [node name="chunk3" type="Node2D"]
@@ -121,7 +121,7 @@ script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes2"]
 position = Vector2( 1760, 8864 )
-shape = SubResource( 23 )
+shape = SubResource( 2 )
 
 [node name="Icicles" type="Node2D" parent="."]
 
@@ -138,7 +138,7 @@ position = Vector2( 2608, 16 )
 position = Vector2( 3088, 16 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 6 )
+material = SubResource( 3 )
 position = Vector2( 2048, 1139 )
 scale = Vector2( 42.6667, 33.0209 )
 texture = ExtResource( 3 )
@@ -155,7 +155,7 @@ __meta__ = {
 
 [node name="IceMap2" type="TileMap" parent="."]
 scale = Vector2( 0.25, 0.25 )
-tile_set = SubResource( 20 )
+tile_set = SubResource( 4 )
 cell_size = Vector2( 512, 512 )
 format = 1
 tile_data = PoolIntArray( 524298, 536870913, 0, 589834, -536870912, 0, 655370, -536870912, 0, 720906, -536870912, 0 )
@@ -166,4 +166,4 @@ script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IceMap2/Ice2"]
 position = Vector2( 4800, 672 )
-shape = SubResource( 22 )
+shape = SubResource( 5 )

@@ -23,7 +23,6 @@ extents = Vector2( 96, 288 )
 script = ExtResource( 5 )
 
 [node name="ice" type="Node2D" parent="."]
-visible = false
 
 [node name="chunk1" parent="ice" instance=ExtResource( 4 )]
 script = null
@@ -94,6 +93,6 @@ position = Vector2( -24000, 0 )
 position = Vector2( 4096, 0 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -22648, 1440 )
+position = Vector2( 792, -136 )
 [connection signal="body_entered" from="ice/End" to="." method="_on_End_body_entered"]
 [connection signal="body_entered" from="ice/Back" to="." method="_on_Back_body_entered"]

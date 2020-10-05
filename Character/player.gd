@@ -47,16 +47,11 @@ func slide(delta):
 	if on_vines and Input.is_action_pressed("grab"):
 		vining = true
 		on_wall = true
-		if motion.y >0:
+		if motion.y >0 and vining:
 			print("grabbed")
 			motion.y = 0 + Input.get_action_strength("down")*500 - Input.get_action_strength("up")*500
 			motion.x = 0 + Input.get_action_strength("right")*500 - Input.get_action_strength("left")*500
 
-			if Input.is_action_just_released("jump"):
-				motion.y += (-GRAVITY+1000)*delta
-				sliding = false
-				vining = false
-				on_wall = false
 	else:
 		vining = false
 		# if !jumping:
@@ -163,13 +158,13 @@ func movement(friction):
 			friction = true
 	
 	#jump
-	if is_on_floor():
+	if is_on_floor() || vining:
 		
 		
 		if Input.is_action_just_pressed("jump"):
 			
 			# GRAVITY = 9.8 * 500
-			# $jump_timer.start()
+			# $jump_timer.s tart()
 			motion.y += JUMP_HEIGHT
 		if friction == true and not on_ice:
 			motion.x = lerp(motion.x, 0, FRICTION)
@@ -214,7 +209,7 @@ func die():
 
 func _on_respawn_timer_timeout():
 	#Respawning
-	set_deferred('position', get_parent().get_node('Level/spawn_point').get_global_transform().get_origin())
+	set_deferred('position', get_parent().get_node('ice/spawn_point').get_global_transform().get_origin())
 	canmove = true
 	$AnimatedSprite.rotation = 0
 
