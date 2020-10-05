@@ -304,6 +304,7 @@ process_material = SubResource( 12 )
 
 [node name="audio" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 0, -2 )
+pitch_scale = 1.64
 
 [node name="Left" type="RayCast2D" parent="."]
 position = Vector2( 0, 65.3896 )

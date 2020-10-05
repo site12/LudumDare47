@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/die.wav-2fee2f1560b646557428d76543dda8db.sample"
+
+[deps]
+
+source_file="res://sounds/sfx/death/die.wav"
+dest_files=[ "res://.import/die.wav-2fee2f1560b646557428d76543dda8db.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
