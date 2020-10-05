@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://bio layer/misc assets/BioForrestTileMap.png" type="Texture" id=1]
 [ext_resource path="res://bio layer/grosswater.shader" type="Shader" id=2]
@@ -528,14 +528,11 @@ points = PoolVector2Array( 0, 0, 512, 0, 512, 384, 0, 192, 0, 0, 0, 0 )
 [sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 56, 168 )
 
-[sub_resource type="RectangleShape2D" id=37]
-extents = Vector2( 56, 280 )
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 56, 104 )
 
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 56, 232 )
-
-[sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 56, 104 )
 
 [node name="biochunk3" type="Node2D"]
 
@@ -597,19 +594,18 @@ script = ExtResource( 6 )
 position = Vector2( 960, 1368 )
 shape = SubResource( 36 )
 
+[node name="vine2" type="Area2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vine2"]
+position = Vector2( 1344, 1560 )
+shape = SubResource( 39 )
+
 [node name="vine3" type="Area2D" parent="."]
 script = ExtResource( 6 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="vine3"]
-position = Vector2( 1984, 496 )
-shape = SubResource( 37 )
-
-[node name="vine4" type="Area2D" parent="."]
-script = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="vine4"]
-position = Vector2( 2112, 616 )
-shape = SubResource( 37 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="vine3"]
+polygon = PoolVector2Array( 1920, 344, 2048, 344, 2048, 464, 2176, 464, 2176, 896, 2048, 896, 2048, 768, 1920, 768 )
 
 [node name="vine5" type="Area2D" parent="."]
 script = ExtResource( 6 )
@@ -617,10 +613,3 @@ script = ExtResource( 6 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vine5"]
 position = Vector2( 3264, 1048 )
 shape = SubResource( 38 )
-
-[node name="vine2" type="Area2D" parent="."]
-script = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="vine2"]
-position = Vector2( 1344, 1560 )
-shape = SubResource( 39 )
