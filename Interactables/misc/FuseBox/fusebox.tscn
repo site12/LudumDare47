@@ -1,0 +1,430 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Interactables/misc/switches/Fuse Box.png" type="Texture" id=1]
+[ext_resource path="res://Interactables/misc/FuseBox/fusebox.gd" type="Script" id=2]
+[ext_resource path="res://village layer/Misc Assets/Light3.png" type="Texture" id=4]
+[ext_resource path="res://village layer/Misc Assets/Light2.png" type="Texture" id=5]
+[ext_resource path="res://Interactables/misc/FuseBox/switch.gd" type="Script" id=6]
+[ext_resource path="res://Interactables/misc/switches/OnSwitchV2.png" type="Texture" id=7]
+[ext_resource path="res://Interactables/misc/switches/OffSwitchV2.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="fusebox" type="Control"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.5
+margin_right = 0.5
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 32.0
+margin_right = 1024.0
+margin_bottom = 512.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="switch1" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="highlight" type="ColorRect" parent="switch1"]
+visible = false
+margin_left = 325.0
+margin_top = 125.0
+margin_right = 468.0
+margin_bottom = 208.0
+color = Color( 0.482353, 0.682353, 0.792157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="switch" type="TextureButton" parent="switch1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 328.0
+margin_top = 128.0
+margin_right = 591.0
+margin_bottom = 260.0
+rect_scale = Vector2( 0.45, 0.45 )
+focus_neighbour_left = NodePath("../../switch6/switch6")
+focus_neighbour_right = NodePath("../../switch2/switch2")
+toggle_mode = true
+pressed = true
+action_mode = 0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red" type="TextureRect" parent="switch1/switch"]
+margin_left = 88.8887
+margin_top = -124.445
+margin_right = 600.889
+margin_bottom = 387.555
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="green" type="TextureRect" parent="switch1/switch"]
+margin_left = 88.8887
+margin_top = -124.445
+margin_right = 600.889
+margin_bottom = 387.555
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade = SubResource( 1 )
+
+[node name="switch2" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="highlight" type="ColorRect" parent="switch2"]
+visible = false
+margin_left = 557.35
+margin_top = 125.0
+margin_right = 700.35
+margin_bottom = 208.0
+color = Color( 0.482353, 0.682353, 0.792157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="switch2" type="TextureButton" parent="switch2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 560.0
+margin_top = 128.0
+margin_right = 823.0
+margin_bottom = 260.0
+rect_scale = Vector2( 0.45, 0.45 )
+focus_neighbour_left = NodePath("../../switch1/switch")
+focus_neighbour_right = NodePath("../../switch3/switch3")
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red" type="TextureRect" parent="switch2/switch2"]
+margin_left = 88.8887
+margin_top = -124.444
+margin_right = 600.889
+margin_bottom = 387.556
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+stretch_mode = 3
+
+[node name="green" type="TextureRect" parent="switch2/switch2"]
+visible = false
+margin_left = 88.8887
+margin_top = -124.444
+margin_right = 600.889
+margin_bottom = 387.556
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="switch3" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="highlight" type="ColorRect" parent="switch3"]
+visible = false
+margin_left = 324.741
+margin_top = 277.37
+margin_right = 467.741
+margin_bottom = 360.37
+color = Color( 0.482353, 0.682353, 0.792157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="switch3" type="TextureButton" parent="switch3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 328.0
+margin_top = 280.0
+margin_right = 591.0
+margin_bottom = 412.0
+rect_scale = Vector2( 0.45, 0.45 )
+focus_neighbour_left = NodePath("../../switch2/switch2")
+focus_neighbour_right = NodePath("../../switch4/switch4")
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red" type="TextureRect" parent="switch3/switch3"]
+margin_left = 88.8889
+margin_top = -124.444
+margin_right = 600.889
+margin_bottom = 387.556
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="green" type="TextureRect" parent="switch3/switch3"]
+visible = false
+margin_left = 88.8889
+margin_top = -124.444
+margin_right = 600.889
+margin_bottom = 387.556
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="switch4" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="highlight" type="ColorRect" parent="switch4"]
+visible = false
+margin_left = 556.828
+margin_top = 276.529
+margin_right = 699.828
+margin_bottom = 359.529
+color = Color( 0.482353, 0.682353, 0.792157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="switch4" type="TextureButton" parent="switch4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 560.0
+margin_top = 280.0
+margin_right = 823.0
+margin_bottom = 412.0
+rect_scale = Vector2( 0.45, 0.45 )
+focus_neighbour_left = NodePath("../../switch3/switch3")
+focus_neighbour_right = NodePath("../../switch5/switch5")
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red" type="TextureRect" parent="switch4/switch4"]
+margin_left = 88.8889
+margin_top = -124.444
+margin_right = 600.889
+margin_bottom = 387.556
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="green" type="TextureRect" parent="switch4/switch4"]
+visible = false
+margin_left = 88.8887
+margin_top = -124.444
+margin_right = 600.889
+margin_bottom = 387.556
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="switch5" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="highlight" type="ColorRect" parent="switch5"]
+visible = false
+margin_left = 324.741
+margin_top = 437.732
+margin_right = 467.741
+margin_bottom = 520.732
+color = Color( 0.482353, 0.682353, 0.792157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="switch5" type="TextureButton" parent="switch5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 328.0
+margin_top = 440.0
+margin_right = 591.0
+margin_bottom = 572.0
+rect_scale = Vector2( 0.45, 0.45 )
+focus_neighbour_left = NodePath("../../switch4/switch4")
+focus_neighbour_right = NodePath("../../switch6/switch6")
+toggle_mode = true
+pressed = true
+action_mode = 0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red" type="TextureRect" parent="switch5/switch5"]
+margin_left = 88.8889
+margin_top = -124.445
+margin_right = 600.889
+margin_bottom = 387.555
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="green" type="TextureRect" parent="switch5/switch5"]
+margin_left = 88.8888
+margin_top = -124.445
+margin_right = 600.889
+margin_bottom = 387.555
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="switch6" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="highlight" type="ColorRect" parent="switch6"]
+visible = false
+margin_left = 556.978
+margin_top = 436.982
+margin_right = 699.978
+margin_bottom = 519.982
+color = Color( 0.482353, 0.682353, 0.792157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="switch6" type="TextureButton" parent="switch6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 560.0
+margin_top = 440.0
+margin_right = 823.0
+margin_bottom = 572.0
+rect_scale = Vector2( 0.45, 0.45 )
+focus_neighbour_left = NodePath("../../switch5/switch5")
+focus_neighbour_right = NodePath("../../switch1/switch")
+toggle_mode = true
+pressed = true
+action_mode = 0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red" type="TextureRect" parent="switch6/switch6"]
+margin_left = 88.8889
+margin_top = -124.445
+margin_right = 600.889
+margin_bottom = 387.555
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="green" type="TextureRect" parent="switch6/switch6"]
+margin_left = 88.8887
+margin_top = -124.444
+margin_right = 600.889
+margin_bottom = 387.556
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="focus_entered" from="switch1/switch" to="switch1/switch" method="_on_switch_focus_entered"]
+[connection signal="focus_exited" from="switch1/switch" to="switch1/switch" method="_on_switch_focus_exited"]
+[connection signal="toggled" from="switch1/switch" to="switch1/switch" method="_on_switch1_toggled"]
+[connection signal="focus_entered" from="switch2/switch2" to="switch2/switch2" method="_on_switch2_focus_entered"]
+[connection signal="focus_exited" from="switch2/switch2" to="switch2/switch2" method="_on_switch2_focus_exited"]
+[connection signal="toggled" from="switch2/switch2" to="switch2/switch2" method="_on_switch2_toggled"]
+[connection signal="focus_entered" from="switch3/switch3" to="switch3/switch3" method="_on_switch3_focus_entered"]
+[connection signal="focus_exited" from="switch3/switch3" to="switch3/switch3" method="_on_switch3_focus_exited"]
+[connection signal="toggled" from="switch3/switch3" to="switch3/switch3" method="_on_switch3_toggled"]
+[connection signal="focus_entered" from="switch4/switch4" to="switch4/switch4" method="_on_switch4_focus_entered"]
+[connection signal="focus_exited" from="switch4/switch4" to="switch4/switch4" method="_on_switch4_focus_exited"]
+[connection signal="toggled" from="switch4/switch4" to="switch4/switch4" method="_on_switch4_toggled"]
+[connection signal="focus_entered" from="switch5/switch5" to="switch5/switch5" method="_on_switch5_focus_entered"]
+[connection signal="focus_exited" from="switch5/switch5" to="switch5/switch5" method="_on_switch5_focus_exited"]
+[connection signal="toggled" from="switch5/switch5" to="switch5/switch5" method="_on_switch5_toggled"]
+[connection signal="focus_entered" from="switch6/switch6" to="switch6/switch6" method="_on_switch6_focus_entered"]
+[connection signal="focus_exited" from="switch6/switch6" to="switch6/switch6" method="_on_switch6_focus_exited"]
+[connection signal="toggled" from="switch6/switch6" to="switch6/switch6" method="_on_switch6_toggled"]
