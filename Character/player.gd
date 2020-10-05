@@ -98,8 +98,10 @@ func movement(friction):
 	
 	#jump
 	if is_on_floor():
+		
 		jumping = false
 		if Input.is_action_just_pressed("jump"):
+			print("jumping")
 			# GRAVITY = 9.8 * 500
 			# $jump_timer.start()
 			motion.y += JUMP_HEIGHT
@@ -112,6 +114,7 @@ func movement(friction):
 		# if on_ice:
 		# 	motion.y += (GRAVITY*0.01)
 		if Input.is_action_just_pressed("jump") and not on_ice:
+			print("jumping")
 			# GRAVITY = 9.8 * 500
 			# $jump_timer.start()
 			jumping = true
