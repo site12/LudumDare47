@@ -437,10 +437,11 @@ shape = SubResource( 5 )
 [node name="Icicles" type="Node2D" parent="."]
 
 [node name="Icicle Spawner" parent="Icicles" instance=ExtResource( 4 )]
-position = Vector2( 1664.44, 414.683 )
+position = Vector2( 1664, 456 )
 
 [node name="Icicle Spawner2" parent="Icicles" instance=ExtResource( 4 )]
-position = Vector2( 3009.51, 668.951 )
+position = Vector2( 3008, 704 )
+scale = Vector2( -1, 1 )
 
 [node name="Icicle Spawner3" parent="Icicles" instance=ExtResource( 4 )]
 position = Vector2( 2120, 456 )

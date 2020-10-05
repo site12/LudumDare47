@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://village layer/Misc Assets/DoorHole2.png" type="Texture" id=1]
 [ext_resource path="res://village layer/door.gd" type="Script" id=2]
 [ext_resource path="res://fonts/GABRWFFR.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://village layer/Misc Assets/WhiteDoorHole2.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 320, 368 )
@@ -48,6 +49,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("outline:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="DoorHole" type="Sprite"]
 position = Vector2( 3418, 1222 )
@@ -65,11 +78,10 @@ position = Vector2( -4, -44 )
 shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = -608.0
-margin_top = -1200.0
+margin_top = -1000.0
 margin_right = 608.0
-margin_bottom = -928.0
+margin_bottom = -728.0
 rect_min_size = Vector2( 1216, 272 )
 color = Color( 0.309804, 0.309804, 0.309804, 0.423529 )
 __meta__ = {
@@ -99,6 +111,11 @@ wait_time = 0.025
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/highlight = SubResource( 3 )
+
+[node name="outline" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -0.858398, -3.38721 )
+texture = ExtResource( 4 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="ColorRect/Label/Timer" to="." method="_on_Timer_timeout"]

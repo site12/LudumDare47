@@ -125,13 +125,13 @@ shape = SubResource( 3 )
 [node name="Icicles" type="Node2D" parent="."]
 
 [node name="Icicle Spawner" parent="Icicles" instance=ExtResource( 5 )]
-position = Vector2( 965.227, 207.734 )
+position = Vector2( 968, 320 )
 
 [node name="Icicle Spawner2" parent="Icicles" instance=ExtResource( 5 )]
-position = Vector2( 2118.45, 152.439 )
+position = Vector2( 2120, 192 )
 
 [node name="Icicle Spawner3" parent="Icicles" instance=ExtResource( 5 )]
-position = Vector2( 3258.34, 286.47 )
+position = Vector2( 3272, 320 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 4 )
