@@ -57,7 +57,7 @@ collision_mask = 2
 shape = SubResource( 2 )
 
 [node name="spawn_point" type="Position2D" parent="."]
-position = Vector2( 768, 920 )
+position = Vector2( 768, 1600 )
 
 [node name="Falling Zone" type="Area2D" parent="."]
 position = Vector2( 840, -880 )
