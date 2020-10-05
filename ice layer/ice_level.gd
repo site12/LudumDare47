@@ -14,4 +14,4 @@ func _on_Falling_Zone_body_entered(body):
 	if body.name == 'player':
 		get_tree().get_root().get_node('root/cavechunk').call_deferred('queue_free')
 		body.canmove = true
-		body.current_zone = 'ice'
+		body.change_zone('ice')

@@ -104,7 +104,7 @@ func test_switches():
 		fusebox.call_deferred('queue_free')
 		var ice = load('res://ice layer/ice_level.tscn').instance()
 		ice.position = get_tree().get_root().get_node('root/ice point').position
-		get_tree().get_root().add_child(ice)
+		get_tree().get_root().get_node('root').add_child(ice)
 
 
 

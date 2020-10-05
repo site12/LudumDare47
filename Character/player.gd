@@ -25,6 +25,7 @@ var current_zone = 'village'
 onready var jt = $jump_timer
 onready var camerapos = $camerapos
 onready var camera = $camerapos/Camera2D
+onready var root = get_tree().get_root().get_node('root')
 
 
 func _physics_process(delta):
@@ -226,7 +227,13 @@ func die():
 
 func _on_respawn_timer_timeout():
 	#Respawning
-	set_deferred('position', get_parent().get_node('spawn_point').get_global_transform().get_origin())
+	match current_zone:
+		'ice':
+			set_deferred('position', root.get_node('ice/spawn_point').get_global_transform().get_origin())
+		'bio':
+			set_deferred('position', get_parent().get_node('spawn_point').get_global_transform().get_origin())	
+		'city':
+			set_deferred('position', get_parent().get_node('spawn_point').get_global_transform().get_origin())
 	canmove = true
 	$AnimatedSprite.rotation = 0
 
@@ -238,3 +245,7 @@ func _on_jump_timer_timeout():
 
 func pass_camera_shake(amount):
 	camera.add_trauma(amount)
+
+func change_zone(zone):
+	current_zone = zone
+	###Shane write some music stuff here
