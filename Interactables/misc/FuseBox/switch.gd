@@ -27,11 +27,15 @@ func _on_switch1_toggled(button_pressed):
 
 func _on_switch2_toggled(button_pressed):
 	$green.visible = button_pressed
+
+func _on_switch2_pressed():
 	switch4.pressed = !switch4.pressed
-	switch6.pressed = !switch4.pressed
+	switch6.pressed = !switch6.pressed
 
 func _on_switch3_toggled(button_pressed):
 	$green.visible = button_pressed
+
+func _on_switch3_pressed():
 	switch1.pressed = !switch1.pressed
 
 
@@ -45,6 +49,8 @@ func _on_switch5_toggled(button_pressed):
 
 func _on_switch6_toggled(button_pressed):
 	$green.visible = button_pressed
+
+func _on_switch6_pressed():
 	switch1.pressed = !switch1.pressed
 
 

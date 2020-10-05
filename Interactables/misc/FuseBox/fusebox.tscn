@@ -38,9 +38,9 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 32.0
+margin_top = 33.7818
 margin_right = 1024.0
-margin_bottom = 512.0
+margin_bottom = 513.782
 rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 stretch_mode = 1
@@ -51,6 +51,9 @@ __meta__ = {
 [node name="switch1" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="highlight" type="ColorRect" parent="switch1"]
 visible = false
@@ -415,9 +418,11 @@ __meta__ = {
 [connection signal="toggled" from="switch1/switch" to="switch1/switch" method="_on_switch1_toggled"]
 [connection signal="focus_entered" from="switch2/switch2" to="switch2/switch2" method="_on_switch2_focus_entered"]
 [connection signal="focus_exited" from="switch2/switch2" to="switch2/switch2" method="_on_switch2_focus_exited"]
+[connection signal="pressed" from="switch2/switch2" to="switch2/switch2" method="_on_switch2_pressed"]
 [connection signal="toggled" from="switch2/switch2" to="switch2/switch2" method="_on_switch2_toggled"]
 [connection signal="focus_entered" from="switch3/switch3" to="switch3/switch3" method="_on_switch3_focus_entered"]
 [connection signal="focus_exited" from="switch3/switch3" to="switch3/switch3" method="_on_switch3_focus_exited"]
+[connection signal="pressed" from="switch3/switch3" to="switch3/switch3" method="_on_switch3_pressed"]
 [connection signal="toggled" from="switch3/switch3" to="switch3/switch3" method="_on_switch3_toggled"]
 [connection signal="focus_entered" from="switch4/switch4" to="switch4/switch4" method="_on_switch4_focus_entered"]
 [connection signal="focus_exited" from="switch4/switch4" to="switch4/switch4" method="_on_switch4_focus_exited"]
@@ -427,4 +432,5 @@ __meta__ = {
 [connection signal="toggled" from="switch5/switch5" to="switch5/switch5" method="_on_switch5_toggled"]
 [connection signal="focus_entered" from="switch6/switch6" to="switch6/switch6" method="_on_switch6_focus_entered"]
 [connection signal="focus_exited" from="switch6/switch6" to="switch6/switch6" method="_on_switch6_focus_exited"]
+[connection signal="pressed" from="switch6/switch6" to="switch6/switch6" method="_on_switch6_pressed"]
 [connection signal="toggled" from="switch6/switch6" to="switch6/switch6" method="_on_switch6_toggled"]
