@@ -565,6 +565,7 @@ position = Vector2( 848, 1984 )
 scene = "res://village layer/village_level.tscn"
 from = "cavechunk"
 to = "village/villagechunk2"
+point = "village point"
 
 [node name="FrontTileMap" type="TileMap" parent="."]
 scale = Vector2( 0.25, 0.25 )
