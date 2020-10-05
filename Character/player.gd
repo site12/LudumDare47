@@ -74,7 +74,10 @@ func direction():
 	if dir == -1 and motion.x == 0:
 		# $RayCast2D.scale.x = 1
 		$AnimatedSprite.flip_h = false
-		$AnimatedSprite.play("idle")
+		if !jumping:
+			$AnimatedSprite.play("idle")
+		else:
+			$AnimatedSprite.play("jump")
 	elif dir == -1:
 		$AnimatedSprite.flip_h = false
 		if !jumping:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=2]
+[gd_scene load_steps=176 format=2]
 
 [ext_resource path="res://Character/anims/Idle/Idle00000.png" type="Texture" id=1]
 [ext_resource path="res://Character/player.gd" type="Script" id=2]
@@ -134,6 +134,35 @@
 [ext_resource path="res://Character/anims/Jump/Jump_00025.png" type="Texture" id=132]
 [ext_resource path="res://Character/anims/Jump/Jump_00016.png" type="Texture" id=133]
 [ext_resource path="res://Character/anims/Jump/Jump_00015.png" type="Texture" id=134]
+[ext_resource path="res://Character/anims/Falling/Falling_00008.png" type="Texture" id=135]
+[ext_resource path="res://Character/anims/Falling/Falling_00020.png" type="Texture" id=136]
+[ext_resource path="res://Character/anims/Falling/Falling_00011.png" type="Texture" id=137]
+[ext_resource path="res://Character/anims/Falling/Falling_00017.png" type="Texture" id=138]
+[ext_resource path="res://Character/anims/Falling/Falling_00010.png" type="Texture" id=139]
+[ext_resource path="res://Character/anims/Falling/Falling_00012.png" type="Texture" id=140]
+[ext_resource path="res://Character/anims/Falling/Falling_00014.png" type="Texture" id=141]
+[ext_resource path="res://Character/anims/Falling/Falling_00013.png" type="Texture" id=142]
+[ext_resource path="res://Character/anims/Falling/Falling_00016.png" type="Texture" id=143]
+[ext_resource path="res://Character/anims/Falling/Falling_00009.png" type="Texture" id=144]
+[ext_resource path="res://Character/anims/Falling/Falling_00015.png" type="Texture" id=145]
+[ext_resource path="res://Character/anims/Falling/Falling_00018.png" type="Texture" id=146]
+[ext_resource path="res://Character/anims/Falling/Falling_00019.png" type="Texture" id=147]
+[ext_resource path="res://Character/anims/Falling/Falling_00021.png" type="Texture" id=148]
+[ext_resource path="res://Character/anims/Falling/Falling_00004.png" type="Texture" id=149]
+[ext_resource path="res://Character/anims/Falling/Falling_00003.png" type="Texture" id=150]
+[ext_resource path="res://Character/anims/Falling/Falling_00002.png" type="Texture" id=151]
+[ext_resource path="res://Character/anims/Falling/Falling_00006.png" type="Texture" id=152]
+[ext_resource path="res://Character/anims/Falling/Falling_00007.png" type="Texture" id=153]
+[ext_resource path="res://Character/anims/Falling/Falling_00005.png" type="Texture" id=154]
+[ext_resource path="res://Character/anims/Falling/Falling_00025.png" type="Texture" id=155]
+[ext_resource path="res://Character/anims/Falling/Falling_00027.png" type="Texture" id=156]
+[ext_resource path="res://Character/anims/Falling/Falling_00022.png" type="Texture" id=157]
+[ext_resource path="res://Character/anims/Falling/Falling_00030.png" type="Texture" id=158]
+[ext_resource path="res://Character/anims/Falling/Falling_00026.png" type="Texture" id=159]
+[ext_resource path="res://Character/anims/Falling/Falling_00028.png" type="Texture" id=160]
+[ext_resource path="res://Character/anims/Falling/Falling_00023.png" type="Texture" id=161]
+[ext_resource path="res://Character/anims/Falling/Falling_00024.png" type="Texture" id=162]
+[ext_resource path="res://Character/anims/Falling/Falling_00029.png" type="Texture" id=163]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34.4624, 78.5083 )
@@ -150,10 +179,10 @@ animations = [ {
 "name": "run",
 "speed": 60.0
 }, {
-"frames": [ ExtResource( 107 ), ExtResource( 111 ), ExtResource( 127 ), ExtResource( 117 ), ExtResource( 110 ), ExtResource( 126 ), ExtResource( 115 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 123 ), ExtResource( 114 ), ExtResource( 116 ), ExtResource( 119 ), ExtResource( 125 ), ExtResource( 131 ), ExtResource( 134 ), ExtResource( 133 ), ExtResource( 105 ), ExtResource( 124 ), ExtResource( 118 ), ExtResource( 120 ), ExtResource( 122 ), ExtResource( 130 ), ExtResource( 106 ), ExtResource( 121 ), ExtResource( 132 ), ExtResource( 108 ), ExtResource( 112 ), ExtResource( 109 ), ExtResource( 113 ) ],
+"frames": [ ExtResource( 107 ), ExtResource( 111 ), ExtResource( 127 ), ExtResource( 117 ), ExtResource( 110 ), ExtResource( 126 ), ExtResource( 115 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 123 ), ExtResource( 114 ), ExtResource( 116 ), ExtResource( 119 ), ExtResource( 125 ), ExtResource( 131 ), ExtResource( 134 ), ExtResource( 133 ), ExtResource( 105 ), ExtResource( 124 ), ExtResource( 118 ), ExtResource( 120 ), ExtResource( 122 ), ExtResource( 130 ), ExtResource( 106 ), ExtResource( 121 ), ExtResource( 132 ), ExtResource( 108 ), ExtResource( 112 ), ExtResource( 109 ), ExtResource( 113 ), ExtResource( 151 ), ExtResource( 150 ), ExtResource( 149 ), ExtResource( 154 ), ExtResource( 152 ), ExtResource( 153 ), ExtResource( 135 ), ExtResource( 144 ), ExtResource( 139 ), ExtResource( 137 ), ExtResource( 140 ), ExtResource( 142 ), ExtResource( 141 ), ExtResource( 145 ), ExtResource( 143 ), ExtResource( 138 ), ExtResource( 146 ), ExtResource( 147 ), ExtResource( 136 ), ExtResource( 148 ), ExtResource( 157 ), ExtResource( 161 ), ExtResource( 162 ), ExtResource( 155 ), ExtResource( 159 ), ExtResource( 156 ), ExtResource( 160 ), ExtResource( 163 ), ExtResource( 158 ) ],
 "loop": false,
 "name": "jump",
-"speed": 30.0
+"speed": 60.0
 } ]
 
 [sub_resource type="Gradient" id=3]
@@ -234,7 +263,7 @@ position = Vector2( 9.53674e-07, 9.53674e-07 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 2 )
 animation = "jump"
-frame = 29
+frame = 58
 playing = true
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
