@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Character/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://village layer/village_level.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ice layer/ice_level.tscn" type="PackedScene" id=3]
+[ext_resource path="res://bio layer/BioLevel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://main.gd" type="Script" id=5]
 [ext_resource path="res://sounds/music/overview.wav" type="AudioStream" id=6]
 [ext_resource path="res://sounds/music/ice layer.wav" type="AudioStream" id=7]
@@ -59,6 +60,9 @@ __meta__ = {
 
 [node name="ice" parent="." instance=ExtResource( 3 )]
 position = Vector2( 9192, 7168 )
+
+[node name="Bio" parent="." instance=ExtResource( 4 )]
+position = Vector2( 14696, 14464 )
 
 [node name="bio point" type="Position2D" parent="."]
 position = Vector2( 14696, 14464 )
