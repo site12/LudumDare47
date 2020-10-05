@@ -3,9 +3,8 @@
 [ext_resource path="res://Interactables/misc/FuseBox/FusePanel.png" type="Texture" id=1]
 [ext_resource path="res://Interactables/misc/fuz bex/FusePanel.gd" type="Script" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 812.111, 648.715 )
+extents = Vector2( 476.08, 648.715 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "highlight"
