@@ -13,9 +13,11 @@ onready var jcast = $jumpcast
 var motion = Vector2()
 var grabbing = false
 var jumping = false
-var sliding = true
+var sliding = false
+var vining = false
 var canmove = true
 var on_ice = false
+var on_vines = false
 var dir = 1
 var on_wall = false
 var which_wall = 0
@@ -42,6 +44,22 @@ func _physics_process(delta):
 	# print($Right.name + str($Right.is_colliding()))
 	
 func slide(delta):
+	if on_vines and Input.is_action_pressed("grab"):
+		vining = true
+		on_wall = true
+		if motion.y >0:
+			print("grabbed")
+			motion.y = 0 + Input.get_action_strength("down")*500 - Input.get_action_strength("up")*500
+			motion.x = 0 + Input.get_action_strength("right")*500 - Input.get_action_strength("left")*500
+
+			if Input.is_action_just_released("jump"):
+				motion.y += (-GRAVITY+1000)*delta
+				sliding = false
+				vining = false
+				on_wall = false
+	else:
+		vining = false
+		# if !jumping:
 	if on_wall and Input.is_action_pressed("grab"):
 		sliding = true
 		# motion.y = 145
@@ -65,6 +83,8 @@ func direction():
 			$AnimatedSprite.play("idle")
 		elif !sliding:
 			$AnimatedSprite.play("jump")
+		elif vining:
+			$AnimatedSprite.play("slide")
 		else:
 			$AnimatedSprite.play("slide")
 
@@ -74,6 +94,8 @@ func direction():
 			$AnimatedSprite.play("run")
 		elif !sliding:
 			$AnimatedSprite.play("jump")
+		elif vining:
+			$AnimatedSprite.play("slide")
 		else:
 			$AnimatedSprite.play("slide")
 
@@ -84,6 +106,8 @@ func direction():
 			$AnimatedSprite.play("idle")
 		elif !sliding:
 			$AnimatedSprite.play("jump")
+		elif vining:
+			$AnimatedSprite.play("slide")
 		else:
 			$AnimatedSprite.play("slide")
 
@@ -93,9 +117,11 @@ func direction():
 			$AnimatedSprite.play("run")
 		elif !sliding:
 			$AnimatedSprite.play("jump")
+		elif vining:
+			$AnimatedSprite.play("slide")
 		else:
 			$AnimatedSprite.play("slide")
-			
+
 		
 func movement(friction):
 
