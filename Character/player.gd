@@ -101,7 +101,7 @@ func movement(friction):
 		
 		jumping = false
 		if Input.is_action_just_pressed("jump"):
-			print("jumping")
+			print("jumping = " + str(jumping))
 			# GRAVITY = 9.8 * 500
 			# $jump_timer.start()
 			motion.y += JUMP_HEIGHT
@@ -114,7 +114,7 @@ func movement(friction):
 		# if on_ice:
 		# 	motion.y += (GRAVITY*0.01)
 		if Input.is_action_just_pressed("jump") and not on_ice:
-			print("jumping")
+			print("jumping = " + str(jumping))
 			# GRAVITY = 9.8 * 500
 			# $jump_timer.start()
 			jumping = true
@@ -129,6 +129,8 @@ func movement(friction):
 		# if friction == true:
 		# 	motion.x = lerp(motion.x, 0, FRICTION)
 	else:
+		jumping = true
+		print("jumping = " + str(jumping))
 		###  air friction?
 		# motion.x = lerp(motion.x, 0, 0.05)
 		pass
