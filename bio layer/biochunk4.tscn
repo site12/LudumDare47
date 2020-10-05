@@ -2,7 +2,6 @@
 
 [ext_resource path="res://bio layer/misc assets/BioForrestTileMap.png" type="Texture" id=1]
 [ext_resource path="res://bio layer/grosswater.shader" type="Shader" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://bio layer/Vines.gd" type="Script" id=4]
 
 [sub_resource type="TileSet" id=1]
@@ -95,11 +94,69 @@
 3/shapes = [  ]
 3/z_index = 0
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=36]
 shader = ExtResource( 2 )
-shader_param/blue_tint = Color( 0.337255, 0.721569, 0.486275, 1 )
-shader_param/sprite_scale = Vector2( 6.5, 3.6 )
+shader_param/blue_tint = Color( 0.486275, 0.921569, 0.266667, 1 )
+shader_param/sprite_scale = Vector2( 6.5, 3.5 )
 shader_param/scale_x = 0.67
+
+[sub_resource type="TileSet" id=37]
+0/name = "BioForrestTileMap.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 512, 512, 512 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "BioForrestTileMap.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 512, 512, 512, 512 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "BioForrestTileMap.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 1024, 1536, 512, 512 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "BioForrestTileMap.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 1536, 1536, 512, 512 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
 
 [sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( 512, 512, 0, 512, 0, 0, 512, 0 )
@@ -566,23 +623,14 @@ cell_size = Vector2( 512, 512 )
 format = 1
 tile_data = PoolIntArray( 196639, 1, 0, 524298, 536870914, 0, 720915, 536870915, 0 )
 
-[node name="water" type="Sprite" parent="."]
-material = SubResource( 4 )
-position = Vector2( 676.879, 1899.5 )
-scale = Vector2( 12, 2.91667 )
-texture = ExtResource( 3 )
-
-[node name="water2" type="Sprite" parent="."]
-material = SubResource( 4 )
-position = Vector2( 1926.52, 1729.64 )
-scale = Vector2( 8.39248, 2.39111 )
-texture = ExtResource( 3 )
-
-[node name="water3" type="Sprite" parent="."]
-material = SubResource( 4 )
-position = Vector2( 3246.44, 1599.47 )
-scale = Vector2( 12.6421, 2.39111 )
-texture = ExtResource( 3 )
+[node name="water3" type="TileMap" parent="."]
+material = SubResource( 36 )
+position = Vector2( 0, 57 )
+scale = Vector2( 0.25, 0.25 )
+tile_set = SubResource( 37 )
+cell_size = Vector2( 512, 512 )
+format = 1
+tile_data = PoolIntArray( 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0 )
 
 [node name="FrontTileMap" type="TileMap" parent="."]
 scale = Vector2( 0.25, 0.25 )
