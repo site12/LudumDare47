@@ -1,6 +1,8 @@
 extends Sprite
 
 export var scene = "path"
+export var from = 'node name'
+export var to = 'node name'
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -18,4 +20,9 @@ func _on_Area2D_body_exited(body):
 
 func _input(event):
 	if Input.is_action_just_pressed("interact") and in_range:
-		get_tree().change_scene(scene)
+		# get_tree().change_scene(scene)
+		var root = get_tree().get_root().get_node('root')
+		root.add_child(load(scene).instance())
+		
+		root.get_node('player').set_deferred('position', root.get_node(to).get_node('DoorHole2').global_position)
+		root.get_node(from).call_deferred('queue_free')

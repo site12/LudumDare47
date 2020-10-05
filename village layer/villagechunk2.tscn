@@ -620,40 +620,40 @@ points = PoolVector2Array( 0, 448, 512, 448, 512, 512, 0, 512 )
 } ]
 18/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 320, 368 )
 
-[sub_resource type="ConvexPolygonShape2D" id=21]
+[sub_resource type="ConvexPolygonShape2D" id=22]
 points = PoolVector2Array( 0, 512, 0, 0, 448, 0, 320, 256, 384, 512, 384, 512 )
 
-[sub_resource type="ConvexPolygonShape2D" id=22]
+[sub_resource type="ConvexPolygonShape2D" id=23]
 points = PoolVector2Array( 0, 0, 448, 0, 320, 256, 384, 512, 0, 512, 0, 512 )
 
-[sub_resource type="ConvexPolygonShape2D" id=23]
-points = PoolVector2Array( 512, 512, 0, 512, 0, 0, 512, 0 )
-
 [sub_resource type="ConvexPolygonShape2D" id=24]
-points = PoolVector2Array( 512, 0, 512, 512, 64, 512, 64, 320, 128, 0, 128, 0 )
+points = PoolVector2Array( 512, 512, 0, 512, 0, 0, 512, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=25]
-points = PoolVector2Array( 256, 256, 512, 256, 512, 512, 256, 512 )
+points = PoolVector2Array( 512, 0, 512, 512, 64, 512, 64, 320, 128, 0, 128, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=26]
-points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 192, 448, 0, 384, 0, 0, 512, 0 )
+points = PoolVector2Array( 256, 256, 512, 256, 512, 512, 256, 512 )
 
 [sub_resource type="ConvexPolygonShape2D" id=27]
-points = PoolVector2Array( 512, 512, 0, 512, 0, 0, 512, 0 )
+points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 192, 448, 0, 384, 0, 0, 512, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=28]
 points = PoolVector2Array( 512, 512, 0, 512, 0, 0, 512, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=29]
-points = PoolVector2Array( 512, 0, 512, 512, 64, 512, 64, 320, 128, 0, 128, 0 )
+points = PoolVector2Array( 512, 512, 0, 512, 0, 0, 512, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=30]
+points = PoolVector2Array( 512, 0, 512, 512, 64, 512, 64, 320, 128, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=31]
 points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 256, 448, 128, 384, 0, 448, 0, 0, 512, 0, 512, 448 )
 
-[sub_resource type="TileSet" id=31]
+[sub_resource type="TileSet" id=32]
 1/name = "RockTownTileSheet.png 1"
 1/texture = ExtResource( 3 )
 1/tex_offset = Vector2( 0, 0 )
@@ -664,14 +664,14 @@ points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 256, 448, 128, 384, 0, 
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 21 )
+1/shape = SubResource( 22 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 21 ),
+"shape": SubResource( 22 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
@@ -685,14 +685,14 @@ points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 256, 448, 128, 384, 0, 
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 26 )
+2/shape = SubResource( 27 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 26 ),
+"shape": SubResource( 27 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -706,14 +706,14 @@ points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 256, 448, 128, 384, 0, 
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 0, 0 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape = SubResource( 27 )
+3/shape = SubResource( 28 )
 3/shape_one_way = false
 3/shape_one_way_margin = 1.0
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 27 ),
+"shape": SubResource( 28 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
@@ -755,14 +755,14 @@ points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 256, 448, 128, 384, 0, 
 6/navigation_offset = Vector2( 0, 0 )
 6/shape_offset = Vector2( 0, 0 )
 6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-6/shape = SubResource( 28 )
+6/shape = SubResource( 29 )
 6/shape_one_way = false
 6/shape_one_way_margin = 1.0
 6/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 28 ),
+"shape": SubResource( 29 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 6/z_index = 0
@@ -790,14 +790,14 @@ points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 256, 448, 128, 384, 0, 
 8/navigation_offset = Vector2( 0, 0 )
 8/shape_offset = Vector2( 0, 0 )
 8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-8/shape = SubResource( 29 )
+8/shape = SubResource( 30 )
 8/shape_one_way = false
 8/shape_one_way_margin = 1.0
 8/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 29 ),
+"shape": SubResource( 30 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 8/z_index = 0
@@ -811,14 +811,14 @@ points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 256, 448, 128, 384, 0, 
 9/navigation_offset = Vector2( 0, 0 )
 9/shape_offset = Vector2( 0, 0 )
 9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-9/shape = SubResource( 30 )
+9/shape = SubResource( 31 )
 9/shape_one_way = false
 9/shape_one_way_margin = 1.0
 9/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 30 ),
+"shape": SubResource( 31 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 9/z_index = 0
@@ -832,14 +832,14 @@ points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 256, 448, 128, 384, 0, 
 10/navigation_offset = Vector2( 0, 0 )
 10/shape_offset = Vector2( 0, 0 )
 10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-10/shape = SubResource( 22 )
+10/shape = SubResource( 23 )
 10/shape_one_way = false
 10/shape_one_way_margin = 1.0
 10/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 22 ),
+"shape": SubResource( 23 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 10/z_index = 0
@@ -867,14 +867,14 @@ points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 256, 448, 128, 384, 0, 
 12/navigation_offset = Vector2( 0, 0 )
 12/shape_offset = Vector2( 0, 0 )
 12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-12/shape = SubResource( 23 )
+12/shape = SubResource( 24 )
 12/shape_one_way = false
 12/shape_one_way_margin = 1.0
 12/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 23 ),
+"shape": SubResource( 24 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 12/z_index = 0
@@ -902,14 +902,14 @@ points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 256, 448, 128, 384, 0, 
 14/navigation_offset = Vector2( 0, 0 )
 14/shape_offset = Vector2( 0, 0 )
 14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-14/shape = SubResource( 24 )
+14/shape = SubResource( 25 )
 14/shape_one_way = false
 14/shape_one_way_margin = 1.0
 14/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 24 ),
+"shape": SubResource( 25 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 14/z_index = 0
@@ -951,14 +951,14 @@ points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 256, 448, 128, 384, 0, 
 17/navigation_offset = Vector2( 0, 0 )
 17/shape_offset = Vector2( 0, 0 )
 17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-17/shape = SubResource( 25 )
+17/shape = SubResource( 26 )
 17/shape_one_way = false
 17/shape_one_way_margin = 1.0
 17/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 25 ),
+"shape": SubResource( 26 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 17/z_index = 0
@@ -977,7 +977,7 @@ points = PoolVector2Array( 512, 448, 512, 448, 320, 384, 256, 448, 128, 384, 0, 
 18/shapes = [  ]
 18/z_index = 0
 
-[node name="villagechunk1" type="Node2D"]
+[node name="villagechunk2" type="Node2D"]
 __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
@@ -1024,12 +1024,14 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 script = ExtResource( 8 )
 scene = "res://village layer/cavechunk.tscn"
+from = "village"
+to = "cavechunk"
 
 [node name="Area2D" type="Area2D" parent="DoorHole2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHole2/Area2D"]
 position = Vector2( -4, -44 )
-shape = SubResource( 32 )
+shape = SubResource( 33 )
 
 [node name="sign" parent="." instance=ExtResource( 9 )]
 position = Vector2( 2904, 1537 )
@@ -1037,7 +1039,7 @@ scale = Vector2( 0.625, 0.625 )
 
 [node name="FrontTileMap" type="TileMap" parent="."]
 scale = Vector2( 0.25, 0.25 )
-tile_set = SubResource( 31 )
+tile_set = SubResource( 32 )
 cell_size = Vector2( 512, 512 )
 format = 1
 tile_data = PoolIntArray( 655385, 11, 0, 655386, 11, 0, 655387, 11, 0, 655388, 536870923, 0, 655389, 536870923, 0, 720908, 536870923, 0, 720909, 536870923, 0, 720910, 536870923, 0, 720911, 536870923, 0, 720912, 536870923, 0, 720913, 536870923, 0, 720914, 536870923, 0, 720915, 536870923, 0, 720916, 536870923, 0, 720917, 536870923, 0, 720918, 536870923, 0, 720919, 11, 0, 720920, 17, 0, 720921, 1073741830, 0, 720922, 1073741830, 0, 720923, 1073741830, 0, 720924, 1073741830, 0, 720925, 1073741830, 0, 720926, 1073741830, 0, 720927, 1073741830, 0, 786432, 11, 0, 786433, 11, 0, 786434, 11, 0, 786435, 11, 0, 786436, 11, 0, 786437, 11, 0, 786438, 11, 0, 786439, 11, 0, 786440, 11, 0, 786441, 11, 0, 786442, 11, 0, 786443, 17, 0, 786444, 1610612742, 0, 786445, 1610612742, 0, 786446, 1610612742, 0, 786447, 1610612742, 0, 786448, 1610612742, 0, 786449, 1610612742, 0, 786450, 1610612742, 0, 786451, 1610612742, 0, 786452, 1610612742, 0, 786453, 1610612742, 0, 786454, 1610612742, 0, 786455, 1610612742, 0, 786456, 536870918, 0, 786457, 536870918, 0, 786458, 1610612742, 0, 786459, 1610612742, 0, 786460, 1610612742, 0, 786461, 1610612742, 0, 786462, 1610612742, 0, 786463, 1610612742, 0, 851968, 6, 0, 851969, 6, 0, 851970, 6, 0, 851971, 6, 0, 851972, 6, 0, 851973, 6, 0, 851974, 6, 0, 851975, 6, 0, 851976, 6, 0, 851977, 6, 0, 851978, 6, 0, 851979, 6, 0, 851980, 6, 0, 851981, 6, 0, 851982, 6, 0, 851983, 6, 0, 851984, 6, 0, 851985, 6, 0, 851986, 6, 0, 851987, 6, 0, 851988, 6, 0, 851989, 6, 0, 851990, 6, 0, 851991, 6, 0, 851992, 6, 0, 851993, 6, 0, 851994, 6, 0, 851995, 6, 0, 851996, 6, 0, 851997, 6, 0, 851998, 6, 0, 851999, 6, 0, 917504, 6, 0, 917505, 6, 0, 917506, 6, 0, 917507, 6, 0, 917508, 6, 0, 917509, 6, 0, 917510, 6, 0, 917511, 6, 0, 917512, 6, 0, 917513, 6, 0, 917514, 6, 0, 917515, 6, 0, 917516, 6, 0, 917517, 6, 0, 917518, 6, 0, 917519, 6, 0, 917520, 6, 0, 917521, 6, 0, 917522, 6, 0, 917523, 6, 0, 917524, 6, 0, 917525, 6, 0, 917526, 6, 0, 917527, 6, 0, 917528, 6, 0, 917529, 6, 0, 917530, 6, 0, 917531, 6, 0, 917532, 6, 0, 917533, 6, 0, 917534, 6, 0, 917535, 6, 0, 983040, 6, 0, 983041, 6, 0, 983042, 6, 0, 983043, 6, 0, 983044, 6, 0, 983045, 6, 0, 983046, 6, 0, 983047, 6, 0, 983048, 6, 0, 983049, 6, 0, 983050, 6, 0, 983051, 6, 0, 983052, 6, 0, 983053, 6, 0, 983054, 6, 0, 983055, 6, 0, 983056, 6, 0, 983057, 6, 0, 983058, 6, 0, 983059, 6, 0, 983060, 6, 0, 983061, 6, 0, 983062, 6, 0, 983063, 6, 0, 983064, 6, 0, 983065, 6, 0, 983066, 6, 0, 983067, 6, 0, 983068, 6, 0, 983069, 6, 0, 983070, 6, 0, 983071, 6, 0, 1048576, 6, 0, 1048577, 6, 0, 1048578, 6, 0, 1048579, 6, 0, 1048580, 6, 0, 1048581, 6, 0, 1048582, 6, 0, 1048583, 6, 0, 1048584, 6, 0, 1048585, 6, 0, 1048586, 6, 0, 1048587, 6, 0, 1048588, 6, 0, 1048589, 6, 0, 1048590, 6, 0, 1048591, 6, 0, 1048592, 6, 0, 1048593, 6, 0, 1048594, 6, 0, 1048595, 6, 0, 1048596, 6, 0, 1048597, 6, 0, 1048598, 6, 0, 1048599, 6, 0, 1048600, 6, 0, 1048601, 6, 0, 1048602, 6, 0, 1048603, 6, 0, 1048604, 6, 0, 1048605, 6, 0, 1048606, 6, 0, 1048607, 6, 0, 1114112, 6, 0, 1114113, 6, 0, 1114114, 6, 0, 1114115, 6, 0, 1114116, 6, 0, 1114117, 6, 0, 1114118, 6, 0, 1114119, 6, 0, 1114120, 6, 0, 1114121, 6, 0, 1114122, 6, 0, 1114123, 6, 0, 1114124, 6, 0, 1114125, 6, 0, 1114126, 6, 0, 1114127, 6, 0, 1114128, 6, 0, 1114129, 6, 0, 1114130, 6, 0, 1114131, 6, 0, 1114132, 6, 0, 1114133, 6, 0, 1114134, 6, 0, 1114135, 6, 0, 1114136, 6, 0, 1114137, 6, 0, 1114138, 6, 0, 1114139, 6, 0, 1114140, 6, 0, 1114141, 6, 0, 1114142, 6, 0, 1114143, 6, 0 )
