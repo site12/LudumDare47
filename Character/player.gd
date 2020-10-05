@@ -23,6 +23,7 @@ var which_wall = 0
 var jump_particle = load("res://land.tscn")
 onready var jt = $jump_timer
 onready var camerapos = $camerapos
+onready var camera = $camerapos/Camera2D
 
 
 func _physics_process(delta):
@@ -123,6 +124,7 @@ func movement(friction):
 
 	if is_on_floor():
 		if jumping:
+			# camera.add_trauma(0.3)
 			var new_jump_particle = jump_particle.instance()
 			get_parent().add_child(new_jump_particle)
 			new_jump_particle.position = $jump_position.get_global_position()
