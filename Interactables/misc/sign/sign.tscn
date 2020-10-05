@@ -9,6 +9,7 @@ extents = Vector2( 160, 160 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "highlight"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("outline2:modulate")
 tracks/0/interp = 1
@@ -85,6 +86,7 @@ font_data = ExtResource( 3 )
 [node name="sign" type="Node2D"]
 
 [node name="outline2" type="Polygon2D" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -8, 7.99999 )
 scale = Vector2( 5, 2.75 )
 polygon = PoolVector2Array( 0, 0, 0, 0, 0, -16, 0, -64, 8, -64, 8, 0 )
@@ -95,6 +97,7 @@ color = Color( 0.298039, 0.231373, 0.0745098, 1 )
 polygon = PoolVector2Array( 0, 0, 0, 0, 0, -16, 0, -64, 8, -64, 8, 0 )
 
 [node name="outline" type="Polygon2D" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -80, -160 )
 rotation = 0.101229
 scale = Vector2( 22, 1.5 )
@@ -128,10 +131,11 @@ shape = SubResource( 1 )
 anims/highlight = SubResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = -608.0
-margin_top = -1200.18
+margin_top = -1500.0
 margin_right = 608.0
-margin_bottom = -656.176
+margin_bottom = -955.996
 rect_min_size = Vector2( 1216, 544 )
 color = Color( 0, 0, 0, 0.384314 )
 __meta__ = {
