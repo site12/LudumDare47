@@ -22,7 +22,8 @@ var on_wall = false
 var which_wall = 0
 var jump_particle = load("res://land.tscn")
 var current_zone = 'village'
-var has_pick = true
+var has_pick = false
+var has_machete = false
 onready var jt = $jump_timer
 onready var camerapos = $camerapos
 onready var camera = $camerapos/Camera2D
@@ -232,7 +233,7 @@ func _on_respawn_timer_timeout():
 		'ice':
 			set_deferred('position', root.get_node('ice/spawn_point').get_global_transform().get_origin())
 		'bio':
-			set_deferred('position', get_parent().get_node('spawn_point').get_global_transform().get_origin())	
+			set_deferred('position', root.get_node('bio/spawn_point').get_global_transform().get_origin())	
 		'city':
 			set_deferred('position', get_parent().get_node('spawn_point').get_global_transform().get_origin())
 	canmove = true
@@ -271,4 +272,7 @@ func change_zone(zone):
 
 func got_pick():
 	has_pick = true
+
+func got_machete():
+	has_machete = true
 	
