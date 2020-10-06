@@ -542,7 +542,6 @@ shape = SubResource( 30 )
 
 [node name="Black" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
-material = SubResource( 1 )
 position = Vector2( 1608, -1824 )
 scale = Vector2( 60, 30 )
 z_index = 2000
