@@ -1,11 +1,6 @@
 extends Node2D
 
-
-
-# func _on_End_body_entered(body):
-# 	$ice.position.x += 16384
-
-# func _on_Back_body_entered(body):
-# 	$ice.position.x -= 16384
-
-
+func move_world(amount):
+    for node in get_children():
+        if node.name != 'player':
+            node.position.x += amount
