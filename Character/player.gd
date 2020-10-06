@@ -282,34 +282,35 @@ func change_zone(zone):
 	current_zone = zone
 	if zone == "ice":
 		$audio2/ice.volume_db = 0
-		$camerapos/Camera2d/ice_border.visible = true
+		get_node('ice_border').visible = true
+		
 	else:
 		$audio2/ice.volume_db = -80
-		$camerapos/Camera2d/ice_border.visible = false
+		get_node('ice_border').visible = false
 	if zone == "cavechunk":
 		$audio2/cavechunk.volume_db = 0
-		$camerapos/Camera2d/cave_border.visible = true
+		get_node('cave_border').visible = true
 	else:
 		$audio2/cavechunk.volume_db = -80
-		$camerapos/Camera2d/cave_border.visible = false
+		get_node('cave_border').visible = false
 	if zone == "bio":
 		$audio2/bio.volume_db = 0
-		$camerapos/Camera2d/bio_border.visible = true
+		get_node('bio_border').visible = true
 	else:
 		$audio2/bio.volume_db = -8
-		$camerapos/Camera2d/bio_border.visible = false
+		get_node('bio_border').visible = false
 	if zone == "city":
 		$audio2/city.volume_db = 0
 		$audio2/overview.volume_db = -80
-		$camerapos/Camera2d/city_border.visible = true
+		get_node('city_border').visible = true
 	else:
 		$audio2/city.volume_db = -80
 		$audio2/overview.volume_db = 0
-		$camerapos/Camera2d/city_border.visible = false
+		get_node('city_border').visible = false
 	if zone == 'village':
-		$camerapos/Camera2d/village_border.visible = true
+		get_node('village_border').visible = true
 	else:
-		$camerapos/Camera2d/village_border.visible = false
+		get_node('village_border').visible = false
 	###Shane write some music stuff here
 
 func got_pick():
