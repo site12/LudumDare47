@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Character/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://village layer/village_level.tscn" type="PackedScene" id=2]
-[ext_resource path="res://ice layer/ice_level.tscn" type="PackedScene" id=3]
-[ext_resource path="res://bio layer/BioLevel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://main.gd" type="Script" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=7]
 [ext_resource path="res://Bounce.gd" type="Script" id=8]
@@ -21,7 +19,7 @@ __meta__ = {
 position = Vector2( 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 24992, 19384 )
+position = Vector2( 1368, 1456 )
 
 [node name="cavechunk point" type="Position2D" parent="."]
 position = Vector2( 6760, -768 )
@@ -40,12 +38,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ice" parent="." instance=ExtResource( 3 )]
-position = Vector2( 9192, 7168 )
-
-[node name="Bio" parent="." instance=ExtResource( 4 )]
-position = Vector2( 14696, 14464 )
-
 [node name="bio point" type="Position2D" parent="."]
 position = Vector2( 14696, 14464 )
 __meta__ = {
@@ -60,7 +52,7 @@ __meta__ = {
 
 [node name="Black" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 24992, 25048 )
+position = Vector2( 24968, 24500 )
 scale = Vector2( 30, 30 )
 z_index = 2000
 z_as_relative = false

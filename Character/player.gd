@@ -263,7 +263,7 @@ func _on_respawn_timer_timeout():
 		'ice':
 			set_deferred('position', root.get_node('ice/spawn_point').get_global_transform().get_origin())
 		'bio':
-			set_deferred('position', root.get_node('bio/spawn_point').get_global_transform().get_origin())	
+			set_deferred('position', root.get_node('Bio/spawn_point').get_global_transform().get_origin())	
 		'city':
 			set_deferred('position', root.get_node('city/spawn_point').get_global_transform().get_origin())
 	canmove = true

@@ -199,11 +199,9 @@ scale = Vector2( 0.584881, 0.584881 )
 
 [node name="IceMan" type="Sprite" parent="ManIce"]
 position = Vector2( 150.458, 68.3899 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 12 )
 
 [node name="Ice" type="Sprite" parent="ManIce"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ManIce"]
