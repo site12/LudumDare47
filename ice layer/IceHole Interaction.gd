@@ -18,6 +18,7 @@ func _on_IceHole_Interaction_body_exited(body):
 
 func _input(_event):
 	if in_range and Input.is_action_just_pressed("interact") and player.has_pick:
+		in_range = false
 		var bio_level = load('res://bio layer/BioLevel.tscn').instance()
 		var root = get_tree().get_root().get_node('root')
 		bio_level.position = root.get_node('bio point').get_global_position()
