@@ -17,7 +17,7 @@ func _on_Vine_Bridge_Interaction_body_exited(body):
 		player = body
 
 func _input(event):
-	if in_range and Input.is_action_just_pressed("interact") and player.has_pick:
+	if in_range and Input.is_action_just_pressed("interact") and player.has_machete:
 		# var bio_level = load('res://bio layer/BioLevel.tscn').instance()
 		# var root = get_tree().get_root().get_node('root')
 		# bio_level.position = root.get_node('bio point').position

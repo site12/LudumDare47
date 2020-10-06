@@ -20,7 +20,7 @@ func _input(event):
 	if in_range and Input.is_action_just_pressed("interact") and player.has_pick:
 		var bio_level = load('res://bio layer/BioLevel.tscn').instance()
 		var root = get_tree().get_root().get_node('root')
-		bio_level.position = root.get_node('bio point').position
+		bio_level.position = root.get_node('bio point').get_global_position()
 		root.add_child(bio_level)
 		get_parent().call_deferred('queue_free')
 		
