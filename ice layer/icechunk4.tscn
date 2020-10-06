@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://ice layer/IceTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://ice layer/IceCave_TileSet.png" type="Texture" id=2]
@@ -13,8 +13,12 @@
 [ext_resource path="res://ice layer/IceIsNice/Pick.png" type="Texture" id=11]
 [ext_resource path="res://ice layer/IceIsNice/IceMan.png" type="Texture" id=12]
 [ext_resource path="res://ice layer/Pickaxe Interaction.gd" type="Script" id=13]
+[ext_resource path="res://Warp.shader" type="Shader" id=14]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 14 )
+
+[sub_resource type="TileSet" id=2]
 resource_local_to_scene = true
 0/name = "IceCave_TileSet.png 0"
 0/texture = ExtResource( 2 )
@@ -45,19 +49,19 @@ resource_local_to_scene = true
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 2240, 104 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 2336, 104 )
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 4 )
 shader_param/color = Vector3( 0.95, 0.95, 0.95 )
 shader_param/OCTAVES = 4
 shader_param/opacity = 0.25
 
-[sub_resource type="TileSet" id=5]
+[sub_resource type="TileSet" id=6]
 0/name = "IceCave_TileSet3.png 0"
 0/texture = ExtResource( 6 )
 0/tex_offset = Vector2( 0, 0 )
@@ -87,11 +91,13 @@ shader_param/opacity = 0.25
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 576, 352 )
 
-[sub_resource type="Animation" id=7]
-resource_name = "Outline"
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 14 )
+
+[sub_resource type="Animation" id=8]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("PickOutline:modulate")
@@ -106,12 +112,13 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 162.324, 198.807 )
 
 [node name="chunk3" type="Node2D"]
 
 [node name="BackTileMap" type="TileMap" parent="."]
+material = SubResource( 1 )
 scale = Vector2( 0.25, 0.25 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 512, 512 )
@@ -122,8 +129,9 @@ __meta__ = {
 }
 
 [node name="Spikes" type="TileMap" parent="."]
+material = SubResource( 1 )
 scale = Vector2( 0.25, 0.25 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 512, 512 )
 format = 1
 tile_data = PoolIntArray( 983045, 1073741824, 0, 983046, 1073741824, 0, 983047, 1073741824, 0, 983048, 1073741824, 0, 983049, 1073741824, 0, 983050, 1073741824, 0, 983051, 1073741824, 0, 983052, 1073741824, 0, 983056, 1610612736, 0, 983057, 1610612736, 0, 983058, 1610612736, 0, 983059, 1610612736, 0, 983060, 1610612736, 0, 983061, 1610612736, 0, 983062, 1610612736, 0, 983063, 1610612736, 0, 983064, 1610612736, 0 )
@@ -136,7 +144,7 @@ script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes"]
 position = Vector2( 4608, 8096 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Spikes2" type="Area2D" parent="Spikes"]
 position = Vector2( 6000, 8 )
@@ -144,15 +152,16 @@ script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes2"]
 position = Vector2( 4496, 8120 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Icicles" type="Node2D" parent="."]
+material = SubResource( 1 )
 
 [node name="Icicle Spawner2" parent="Icicles" instance=ExtResource( 5 )]
 position = Vector2( 2120, 192 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 4 )
+material = SubResource( 5 )
 position = Vector2( 2048, 1139 )
 scale = Vector2( 42.6667, 33.0209 )
 texture = ExtResource( 3 )
@@ -161,6 +170,7 @@ __meta__ = {
 }
 
 [node name="FrontTileMap" type="TileMap" parent="."]
+material = SubResource( 1 )
 scale = Vector2( 0.25, 0.25 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 512, 512 )
@@ -171,8 +181,9 @@ __meta__ = {
 }
 
 [node name="IceMap" type="TileMap" parent="."]
+material = SubResource( 1 )
 scale = Vector2( 0.25, 0.25 )
-tile_set = SubResource( 5 )
+tile_set = SubResource( 6 )
 cell_size = Vector2( 512, 512 )
 format = 1
 tile_data = PoolIntArray( 720914, 1, 0, 720915, 536870913, 0, 720918, 1, 0, 720919, 536870913, 0 )
@@ -183,7 +194,7 @@ script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IceMap/ice2"]
 position = Vector2( 4960, 480 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="ice3" type="Area2D" parent="IceMap"]
 position = Vector2( 4800, 5408 )
@@ -191,23 +202,26 @@ script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IceMap/ice3"]
 position = Vector2( 7008, 480 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="ManIce" type="StaticBody2D" parent="."]
 position = Vector2( 2596.5, 719.3 )
 scale = Vector2( 0.584881, 0.584881 )
 
 [node name="IceMan" type="Sprite" parent="ManIce"]
+material = SubResource( 10 )
 position = Vector2( 150.458, 68.3899 )
 texture = ExtResource( 12 )
 
 [node name="Ice" type="Sprite" parent="ManIce"]
+material = SubResource( 10 )
 texture = ExtResource( 9 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ManIce"]
 polygon = PoolVector2Array( 47.0181, -354.432, 47.0181, -299.72, 170.12, -162.94, 238.51, -162.94, 252.188, -121.906, 252.188, 1.19629, 293.222, 110.62, 238.51, 261.078, 265.866, 302.112, 252.188, 356.824, 197.476, 343.146, 142.764, 384.18, 33.3398, 343.146, -35.0498, 384.18, -48.728, 384.18, -212.864, 233.722, -212.864, 220.044, -171.83, 165.332, -185.508, 96.9423, -130.796, 42.2302, -171.83, -26.1598, -130.796, -67.1937, -103.44, -149.262, -226.542, -245.008, -130.796, -395.466, 47.0181, -395.466 )
 
 [node name="Pick" type="Sprite" parent="."]
+material = SubResource( 1 )
 position = Vector2( 2788.5, 735.3 )
 rotation = -0.196519
 scale = Vector2( 0.774206, 0.774206 )
@@ -218,13 +232,13 @@ modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pick"]
-anims/Outline = SubResource( 7 )
+anims/Outline = SubResource( 8 )
 
 [node name="Pickaxe Interaction" type="Area2D" parent="Pick"]
 script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pick/Pickaxe Interaction"]
 rotation = 0.197222
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 [connection signal="body_entered" from="Pick/Pickaxe Interaction" to="Pick/Pickaxe Interaction" method="_on_Pickaxe_Interaction_body_entered"]
 [connection signal="body_exited" from="Pick/Pickaxe Interaction" to="Pick/Pickaxe Interaction" method="_on_Pickaxe_Interaction_body_exited"]

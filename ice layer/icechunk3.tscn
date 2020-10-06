@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://ice layer/IceTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://ice layer/IceCave_TileSet.png" type="Texture" id=2]
@@ -9,8 +9,12 @@
 [ext_resource path="res://ice layer/Misc Assets/Fossil1.png" type="Texture" id=7]
 [ext_resource path="res://ice layer/Ice.gd" type="Script" id=8]
 [ext_resource path="res://Shared Assets/Spikes.gd" type="Script" id=9]
+[ext_resource path="res://Warp.shader" type="Shader" id=10]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 10 )
+
+[sub_resource type="TileSet" id=2]
 0/name = "IceCave_TileSet.png 0"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
@@ -40,16 +44,16 @@
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1344, 352 )
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 4 )
 shader_param/color = Vector3( 0.95, 0.95, 0.95 )
 shader_param/OCTAVES = 4
 shader_param/opacity = 0.25
 
-[sub_resource type="TileSet" id=4]
+[sub_resource type="TileSet" id=5]
 0/name = "IceCave_TileSet3.png 0"
 0/texture = ExtResource( 6 )
 0/tex_offset = Vector2( 0, 0 )
@@ -79,12 +83,13 @@ shader_param/opacity = 0.25
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 384, 1888 )
 
 [node name="chunk3" type="Node2D"]
 
 [node name="BackTileMap" type="TileMap" parent="."]
+material = SubResource( 1 )
 scale = Vector2( 0.25, 0.25 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 512, 512 )
@@ -95,14 +100,16 @@ __meta__ = {
 }
 
 [node name="Fossil1" type="Sprite" parent="."]
+material = SubResource( 1 )
 position = Vector2( 1424, 560 )
 rotation = 3.74373
 scale = Vector2( 1.01389, 0.978333 )
 texture = ExtResource( 7 )
 
 [node name="Spikes" type="TileMap" parent="."]
+material = SubResource( 1 )
 scale = Vector2( 0.25, 0.25 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 512, 512 )
 format = 1
 tile_data = PoolIntArray( 851987, 1073741824, 0, 851988, 1073741825, 0, 917524, 1, 0, 917525, 1073741824, 0, 917526, 1073741824, 0, 917527, 1073741824, 0, 917528, 1610612736, 0, 1048577, 1073741824, 0, 1048578, 1073741824, 0, 1048579, 1073741824, 0, 1048580, 1073741824, 0, 1048581, 1073741824, 0 )
@@ -121,9 +128,10 @@ script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes2"]
 position = Vector2( 1760, 8864 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Icicles" type="Node2D" parent="."]
+material = SubResource( 1 )
 
 [node name="Icicle Spawner" parent="Icicles" instance=ExtResource( 5 )]
 position = Vector2( 1472, 192 )
@@ -135,12 +143,13 @@ position = Vector2( 1600, 200 )
 position = Vector2( 3136, 64 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 3 )
+material = SubResource( 4 )
 position = Vector2( 2048, 1139 )
 scale = Vector2( 42.6667, 33.0209 )
 texture = ExtResource( 3 )
 
 [node name="FrontTileMap" type="TileMap" parent="."]
+material = SubResource( 1 )
 scale = Vector2( 0.25, 0.25 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 512, 512 )
@@ -151,8 +160,9 @@ __meta__ = {
 }
 
 [node name="IceMap2" type="TileMap" parent="."]
+material = SubResource( 1 )
 scale = Vector2( 0.25, 0.25 )
-tile_set = SubResource( 4 )
+tile_set = SubResource( 5 )
 cell_size = Vector2( 512, 512 )
 format = 1
 tile_data = PoolIntArray( 524298, 536870913, 0, 589834, -536870912, 0, 655370, -536870912, 0, 720906, -536870912, 0 )
@@ -163,4 +173,4 @@ script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IceMap2/Ice2"]
 position = Vector2( 4800, 672 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
