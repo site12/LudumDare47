@@ -52,7 +52,7 @@ __meta__ = {
 
 [node name="Black" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 24968, 24336 )
+position = Vector2( 24968, 24500 )
 scale = Vector2( 30, 30 )
 z_index = 2000
 z_as_relative = false

@@ -266,6 +266,7 @@ format = 1
 tile_data = PoolIntArray( 851984, 2, 0, 851985, 2, 0, 851986, 2, 0 )
 
 [node name="IceHoleOutline" type="Sprite" parent="HoleCover"]
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 8960, 6816 )
 texture = ExtResource( 10 )
 
