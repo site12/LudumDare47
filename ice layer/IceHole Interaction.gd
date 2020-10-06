@@ -12,11 +12,11 @@ func _on_IceHole_Interaction_body_entered(body):
 
 func _on_IceHole_Interaction_body_exited(body):
 	if body.name == 'player':
-		in_range = true
+		in_range = false
 		anim_player.play_backwards('Ice Outline')
 		player = body
 
-func _input(event):
+func _input(_event):
 	if in_range and Input.is_action_just_pressed("interact") and player.has_pick:
 		var bio_level = load('res://bio layer/BioLevel.tscn').instance()
 		var root = get_tree().get_root().get_node('root')

@@ -5,17 +5,18 @@ var panel = false
 var player
 
 func _on_Area2D_body_entered(body):
-	$AnimationPlayer.play('highlight fusebox')
-	in_range = true
 	if body.name == 'player':
+		$AnimationPlayer.play('highlight fusebox')
+		in_range = true
 		player = body
 
 
 func _on_Area2D_body_exited(body):
-	$AnimationPlayer.play_backwards('highlight fusebox')
-	in_range = false
+	if body.name == 'player':
+		$AnimationPlayer.play_backwards('highlight fusebox')
+		in_range = false
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("interact") and in_range:
 		panel = !panel
 		if panel:

@@ -24,7 +24,7 @@ func _on_Area2D_body_exited(body):
 		in_range = false
 		$AnimationPlayer.play_backwards("highlight")
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("interact") and in_range:
 		# get_tree().change_scene(scene)
 		var root = get_tree().get_root().get_node('root')

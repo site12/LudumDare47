@@ -1,8 +1,10 @@
 extends Area2D
 
+var _err
+
 func _ready():
-	connect('body_entered', self, '_on_Ice_body_entered')
-	connect('body_exited', self, '_on_Ice_body_exited')
+	_err = connect('body_entered', self, '_on_Ice_body_entered')
+	_err = connect('body_exited', self, '_on_Ice_body_exited')
 
 func _on_Ice_body_entered(body):
 	if body.name == 'player':

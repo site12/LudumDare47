@@ -16,7 +16,7 @@ func _on_Vine_Bridge_Interaction_body_exited(body):
 		anim_player.play_backwards('Outline')
 		player = body
 
-func _input(event):
+func _input(_event):
 	if in_range and Input.is_action_just_pressed("interact") and player.has_machete:
 		# var bio_level = load('res://bio layer/BioLevel.tscn').instance()
 		# var root = get_tree().get_root().get_node('root')

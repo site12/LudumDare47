@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://bio layer/biochunk3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://bio layer/biochunk1.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://bio layer/biochunk5.tscn" type="PackedScene" id=4]
 [ext_resource path="res://bio layer/biochunk4.tscn" type="PackedScene" id=5]
 [ext_resource path="res://bio layer/BioLevel.gd" type="Script" id=6]
-[ext_resource path="res://Character/player.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 176, 304 )
@@ -30,9 +29,6 @@ position = Vector2( 8192, 0 )
 
 [node name="biochunk4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 12288, 0 )
-
-[node name="player" parent="biochunk4" instance=ExtResource( 7 )]
-position = Vector2( -16, 1352 )
 
 [node name="biochunk5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 16384, 0 )

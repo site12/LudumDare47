@@ -7,9 +7,10 @@
 [ext_resource path="res://ice layer/Icicle Spawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ice layer/IceCave_TileSet3.png" type="Texture" id=6]
 [ext_resource path="res://ice layer/Misc Assets/Fossil1.png" type="Texture" id=7]
-[ext_resource path="res://ice layer/Ice.gd" type="Script" id=8]
+[ext_resource path="res://ice layer/ice.gd" type="Script" id=8]
 [ext_resource path="res://Shared Assets/Spikes.gd" type="Script" id=9]
 [ext_resource path="res://Warp.shader" type="Shader" id=10]
+
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 10 )

@@ -42,11 +42,7 @@ func _physics_process(delta):
 	movement(friction)
 	direction()
 	slide(delta)
-		
 	motion = move_and_slide(motion, UP)
-	# print($Left.name + str($Left.is_colliding()))
-	# print($Right.name + str($Right.is_colliding()))
-	
 func slide(delta):
 	if on_vines and Input.is_action_pressed("grab"):
 		vining = true
@@ -55,31 +51,17 @@ func slide(delta):
 			print("grabbed")
 			motion.y = 0 + Input.get_action_strength("down")*500 - Input.get_action_strength("up")*500
 			motion.x = 0 + Input.get_action_strength("right")*500 - Input.get_action_strength("left")*500
-
 	else:
 		vining = false
-		# if !jumping:
 	if on_wall and Input.is_action_pressed("grab"):
 		sliding = true
-		# motion.y = 145
 		if motion.y >0:
 			motion.y += (-GRAVITY+200)*delta
-		# if !jumping:
-		# 	motion.y += 70
-			
-		# if $RayCast2D.collide_with_bodies:
-		# 	pass
-		
 	else:
 		sliding = false
-		#GRAVITY = 35
 	
 func direction():
-	
-	
-	
 	if dir == 1 and motion.x == 0:
-		# $RayCast2D.scale.x = -1
 		$AnimatedSprite.flip_h = true
 		if !jumping:
 			$AnimatedSprite.play("idle")
@@ -141,37 +123,21 @@ func direction():
 
 		
 func movement(friction):
-
-
-
 	if is_on_floor():
 		if jumping:
-			# camera.add_trauma(0.3)
 			var new_jump_particle = jump_particle.instance()
 			get_parent().add_child(new_jump_particle)
 			new_jump_particle.position = $jump_position.get_global_position()
-		#print("jumping")
 		jumping = false
 		pass
 	else:
 		jumping = true
-	
-		
-
-	#print(str(jcast.get_collision_point())+"    "+str(jcast.global_position))
 
 	if Input.is_action_just_released("jump") and motion.y < 0:
-		### Better Variable Jump Level
 		motion.y = lerp(motion.y, 0, 0.5)
-	# if Input.is_action_pressed("jump"):
-	# 	GRAVITY = 9.8 * 250
-	# else:
-	# 	GRAVITY = 9.8 * 1000
+	
 	if canmove:
 		### Left and right
-		
-		
-		
 		if Input.is_action_pressed("right"):
 			
 			if not on_ice and motion.x < 0 and is_on_floor():
@@ -235,18 +201,8 @@ func movement(friction):
 			motion = motion_change
 			print(motion_change)
 			
-		
-		# if friction == true:
-		# 	motion.x = lerp(motion.x, 0, FRICTION)
 	else:
-		###  air friction?
-		# motion.x = lerp(motion.x, 0, 0.05)
 		pass
-		
-		# Variable jump height
-		# if Input.is_action_just_released("jump") && motion.y < MIN_JUMP_HEIGHT:
-		# 	motion.y = MIN_JUMP_HEIGHT
-		# 	pass
 func die():
 	canmove = false
 	var sound = load("res://sounds/sfx/death/die.wav")
@@ -258,7 +214,7 @@ func die():
 	$respawn_timer.start()
 
 func _on_respawn_timer_timeout():
-	#Respawning
+	### Respawning
 	match current_zone:
 		'ice':
 			set_deferred('position', root.get_node('ice/spawn_point').get_global_transform().get_origin())

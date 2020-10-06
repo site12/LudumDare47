@@ -6,7 +6,8 @@
 [ext_resource path="res://Shared Assets/Spikes.gd" type="Script" id=4]
 [ext_resource path="res://Warp.shader" type="Shader" id=5]
 [ext_resource path="res://bio layer/grosswater.shader" type="Shader" id=6]
-[ext_resource path="res://bio layer/vines.gd" type="Script" id=7]
+[ext_resource path="res://bio layer/Vines.gd" type="Script" id=7]
+
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )

@@ -16,7 +16,7 @@ func _on_Machete_Interaction_body_exited(body):
 		anim_player.play_backwards('Outline')
 		player = body
 
-func _input(event):
+func _input(_event):
 	if in_range and Input.is_action_just_pressed("interact"):
 		player.got_machete()
 		get_parent().visible = false
